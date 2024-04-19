@@ -57,8 +57,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
-                                    									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/ap_sysc"/>
@@ -92,8 +90,6 @@
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
                                     									
@@ -229,8 +225,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
-                                    									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/ap_sysc"/>
@@ -254,8 +248,6 @@
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
                                     									
                                     <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
                                     									
