@@ -8,4 +8,81 @@
 
 \section{Lab-1}
 
+\emph{How many clock cycles the tool estimates is the latency of the mmult hardware?}
+
+Cycles: 366736 (3.66\,ms)
+
+
+
+\noindent \emph{How many DSP blocks, BRAMs, FFS, and LUTs are used by the mmult hardware?}
+
+DSP: 5
+
+FF: 3651
+
+LUT: 3816
+
+BRAM: 16
+
+
+
+\noindent  \emph{Q3}
+
+1024
+
+\noindent  \emph{Q4}
+
+0x00 is \textsf{AP\_START} and \textsf{AP\_STOP} is present in the \textsf{CTRL} register.
+
+\noindent \emph{Q5}
+
+2235 (22.3\,$\mu$s)
+
+
+\noindent \emph{Q6}
+
+BRAM: 76
+
+DSP: 160
+
+FF: 20587
+
+LUT: 28405
+
+
+\noindent \emph{Q7}
+
+Interval: 1027 \textsf{Loop1\_Loop2}, Interval: 1191 \textsf{Loop3\_Loop4}
+
+
+\noindent \emph{Q8}
+
+Cannot determine the interaction interval of the loops. The tool thinks that there is a data dependency between the loops. 
+
+Iteration Latency: - \textsf{Loop1\_Loop2}, Iteration Latency: - \textsf{Loop3\_Loop4}
+
+\newpage
+
+\section{Lab-2} 
+
+\emph{Q1} Slices LUTS: 11960
+
+\emph{Q2} Slice registers: 17289
+
+\emph{Q3} Block RAM tiles: 33.5
+
+\emph{Q4} DSPs: 160
+
+\emph{Q5} Worst negative slack: 0.317ns
+
+\emph{Q6} data path delay: 2.53\,ns 
+
+\emph{Q7} Logic delay: 0.124\,ns (4.902\%) and route: 2.406\,ns (95.098\%)
+
+\emph{Q8} LUTS in SLICEL: 4
+
+\emph{Q9} SLICEL registers: 8
+
+\emph{Q10} Inputs and outputs in LUT: 6 inputs and 2 outputs 
+
 \end{document}
