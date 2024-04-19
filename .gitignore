@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,python,modelsim,matlab,latex,emacs,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,visualstudiocode,python,modelsim,matlab,latex,emacs,c++
 
+*.zip
+*.autopilot/*
+*syn/*
 ### C++ ###
 # Prerequisites
 *.d

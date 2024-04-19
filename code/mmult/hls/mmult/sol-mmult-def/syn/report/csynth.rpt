@@ -1,0 +1,277 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mmult'
+================================================================
++ General Information: 
+    * Date:           Fri Apr 19 11:04:58 2024
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        mmult
+    * Solution:       sol-mmult-def (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020i-clg400-1L
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+    |            Modules            |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |           |             |             |     |
+    |            & Loops            |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP    |      FF     |     LUT     | URAM|
+    +-------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+    |+ mmult                        |  Timing|  -0.71|     2235|  2.235e+04|         -|     2236|     -|        no|  76 (27%)|  160 (72%)|  20587 (19%)|  28405 (53%)|    -|
+    | + mmult_Pipeline_LOOP1_LOOP2  |  Timing|  -0.71|     1027|  1.027e+04|         -|     1027|     -|        no|         -|          -|    130 (~0%)|    179 (~0%)|    -|
+    |  o LOOP1_LOOP2                |       -|   7.30|     1025|  1.025e+04|         3|        1|  1024|       yes|         -|          -|            -|            -|    -|
+    | + mmult_Pipeline_LOOP3_LOOP4  |  Timing|  -0.71|     1191|  1.191e+04|         -|     1191|     -|        no|         -|  160 (72%)|  17515 (16%)|  23830 (44%)|    -|
+    |  o LOOP3_LOOP4                |       -|   7.30|     1189|  1.189e+04|       167|        1|  1024|       yes|         -|          -|            -|            -|    -|
+    +-------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_A   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_B   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_C   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | A_offset_1 | 0x10   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | A_offset_2 | 0x14   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | B_offset_1 | 0x1c   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | B_offset_2 | 0x20   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | C_offset_1 | 0x28   | 32    | W      | Data signal of C_offset          |                                                                      |
+| s_axi_control | C_offset_2 | 0x2c   | 32    | W      | Data signal of C_offset          |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| B        | in        | float*   |
+| C        | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| A        | m_axi_A       | interface |          |
+| A        | s_axi_control | interface | offset   |
+| B        | m_axi_B       | interface |          |
+| B        | s_axi_control | interface | offset   |
+| C        | m_axi_C       | interface |          |
+| C        | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-------+------------------------+
+| HW Interface | Direction | Length | Width | Loop  | Loop Location          |
++--------------+-----------+--------+-------+-------+------------------------+
+| m_axi_A      | read      | 1024   | 32    | LOOP1 | ../src/mmult.cpp:29:10 |
+| m_axi_B      | read      | 1024   | 32    | LOOP1 | ../src/mmult.cpp:29:10 |
+| m_axi_C      | write     | 1024   | 32    | LOOP3 | ../src/mmult.cpp:37:14 |
++--------------+-----------+--------+-------+-------+------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+------------------------+-----------+--------------+--------+-------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location        | Direction | Burst Status | Length | Loop  | Loop Location          | Resolution | Problem                                                                                                 |
++--------------+----------+------------------------+-----------+--------------+--------+-------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_A      | A        | ../src/mmult.cpp:32:15 | read      | Widen Fail   |        | LOOP2 | ../src/mmult.cpp:30:19 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_A      | A        | ../src/mmult.cpp:32:15 | read      | Inferred     | 1024   | LOOP1 | ../src/mmult.cpp:29:10 |            |                                                                                                         |
+| m_axi_B      | B        | ../src/mmult.cpp:33:30 | read      | Widen Fail   |        | LOOP2 | ../src/mmult.cpp:30:19 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_B      | B        | ../src/mmult.cpp:33:30 | read      | Inferred     | 1024   | LOOP1 | ../src/mmult.cpp:29:10 |            |                                                                                                         |
+| m_axi_C      | C        | ../src/mmult.cpp:45:30 | write     | Widen Fail   |        | LOOP4 | ../src/mmult.cpp:38:15 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_C      | C        | ../src/mmult.cpp:45:30 | write     | Inferred     | 1024   | LOOP3 | ../src/mmult.cpp:37:14 |            |                                                                                                         |
++--------------+----------+------------------------+-----------+--------------+--------+-------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                  | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| + mmult                               | 160 |        |            |      |         |         |
+|  + mmult_Pipeline_LOOP1_LOOP2         | 0   |        |            |      |         |         |
+|    add_ln29_1_fu_642_p2               |     |        | add_ln29_1 | add  | fabric  | 0       |
+|    add_ln29_fu_710_p2                 |     |        | add_ln29   | add  | fabric  | 0       |
+|    add_ln33_fu_755_p2                 |     |        | add_ln33   | add  | fabric  | 0       |
+|    add_ln30_fu_679_p2                 |     |        | add_ln30   | add  | fabric  | 0       |
+|  + mmult_Pipeline_LOOP3_LOOP4         | 160 |        |            |      |         |         |
+|    add_ln37_1_fu_1354_p2              |     |        | add_ln37_1 | add  | fabric  | 0       |
+|    add_ln37_fu_1366_p2                |     |        | add_ln37   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U69  | 3   |        | term       | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U37 | 2   |        | result     | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U70  | 3   |        | term_1     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U38 | 2   |        | result_1   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U71  | 3   |        | term_2     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U39 | 2   |        | result_2   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U72  | 3   |        | term_3     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U40 | 2   |        | result_3   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U73  | 3   |        | term_4     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U41 | 2   |        | result_4   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U74  | 3   |        | term_5     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U42 | 2   |        | result_5   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U75  | 3   |        | term_6     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U43 | 2   |        | result_6   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U76  | 3   |        | term_7     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U44 | 2   |        | result_7   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U77  | 3   |        | term_8     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U45 | 2   |        | result_8   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U78  | 3   |        | term_9     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U46 | 2   |        | result_9   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U79  | 3   |        | term_10    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U47 | 2   |        | result_10  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U80  | 3   |        | term_11    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U48 | 2   |        | result_11  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U81  | 3   |        | term_12    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U49 | 2   |        | result_12  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U82  | 3   |        | term_13    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U50 | 2   |        | result_13  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U83  | 3   |        | term_14    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U51 | 2   |        | result_14  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U84  | 3   |        | term_15    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U52 | 2   |        | result_15  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U85  | 3   |        | term_16    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U53 | 2   |        | result_16  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U86  | 3   |        | term_17    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U54 | 2   |        | result_17  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U87  | 3   |        | term_18    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U55 | 2   |        | result_18  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U88  | 3   |        | term_19    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U56 | 2   |        | result_19  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U89  | 3   |        | term_20    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U57 | 2   |        | result_20  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U90  | 3   |        | term_21    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U58 | 2   |        | result_21  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U91  | 3   |        | term_22    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U59 | 2   |        | result_22  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U92  | 3   |        | term_23    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U60 | 2   |        | result_23  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U93  | 3   |        | term_24    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U61 | 2   |        | result_24  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U94  | 3   |        | term_25    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U62 | 2   |        | result_25  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U95  | 3   |        | term_26    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U63 | 2   |        | result_26  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U96  | 3   |        | term_27    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U64 | 2   |        | result_27  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U97  | 3   |        | term_28    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U65 | 2   |        | result_28  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U98  | 3   |        | term_29    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U66 | 2   |        | result_29  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U99  | 3   |        | term_30    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U67 | 2   |        | result_30  | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U100 | 3   |        | term_31    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U68 | 2   |        | result_31  | fadd | fulldsp | 4       |
+|    add_ln38_fu_1416_p2                |     |        | add_ln38   | add  | fabric  | 0       |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage         | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |               |           |      |      |        |          |      |         | Banks            |
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+| + mmult           |               |           | 76   | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface     | s_axilite |      |      |        |          |      |         |                  |
+|   A_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   B_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   C_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   Abuf_U          | ram_s2p array |           | 2    |      |        | Abuf     | auto | 1       | 32, 64, 1        |
+|   Abuf_1_U        | ram_s2p array |           | 2    |      |        | Abuf_1   | auto | 1       | 32, 64, 1        |
+|   Abuf_2_U        | ram_s2p array |           | 2    |      |        | Abuf_2   | auto | 1       | 32, 64, 1        |
+|   Abuf_3_U        | ram_s2p array |           | 2    |      |        | Abuf_3   | auto | 1       | 32, 64, 1        |
+|   Abuf_4_U        | ram_s2p array |           | 2    |      |        | Abuf_4   | auto | 1       | 32, 64, 1        |
+|   Abuf_5_U        | ram_s2p array |           | 2    |      |        | Abuf_5   | auto | 1       | 32, 64, 1        |
+|   Abuf_6_U        | ram_s2p array |           | 2    |      |        | Abuf_6   | auto | 1       | 32, 64, 1        |
+|   Abuf_7_U        | ram_s2p array |           | 2    |      |        | Abuf_7   | auto | 1       | 32, 64, 1        |
+|   Abuf_8_U        | ram_s2p array |           | 2    |      |        | Abuf_8   | auto | 1       | 32, 64, 1        |
+|   Abuf_9_U        | ram_s2p array |           | 2    |      |        | Abuf_9   | auto | 1       | 32, 64, 1        |
+|   Abuf_10_U       | ram_s2p array |           | 2    |      |        | Abuf_10  | auto | 1       | 32, 64, 1        |
+|   Abuf_11_U       | ram_s2p array |           | 2    |      |        | Abuf_11  | auto | 1       | 32, 64, 1        |
+|   Abuf_12_U       | ram_s2p array |           | 2    |      |        | Abuf_12  | auto | 1       | 32, 64, 1        |
+|   Abuf_13_U       | ram_s2p array |           | 2    |      |        | Abuf_13  | auto | 1       | 32, 64, 1        |
+|   Abuf_14_U       | ram_s2p array |           | 2    |      |        | Abuf_14  | auto | 1       | 32, 64, 1        |
+|   Abuf_15_U       | ram_s2p array |           | 2    |      |        | Abuf_15  | auto | 1       | 32, 64, 1        |
+|   Bbuf_U          | ram_s2p array |           | 2    |      |        | Bbuf     | auto | 1       | 32, 64, 1        |
+|   Bbuf_1_U        | ram_s2p array |           | 2    |      |        | Bbuf_1   | auto | 1       | 32, 64, 1        |
+|   Bbuf_2_U        | ram_s2p array |           | 2    |      |        | Bbuf_2   | auto | 1       | 32, 64, 1        |
+|   Bbuf_3_U        | ram_s2p array |           | 2    |      |        | Bbuf_3   | auto | 1       | 32, 64, 1        |
+|   Bbuf_4_U        | ram_s2p array |           | 2    |      |        | Bbuf_4   | auto | 1       | 32, 64, 1        |
+|   Bbuf_5_U        | ram_s2p array |           | 2    |      |        | Bbuf_5   | auto | 1       | 32, 64, 1        |
+|   Bbuf_6_U        | ram_s2p array |           | 2    |      |        | Bbuf_6   | auto | 1       | 32, 64, 1        |
+|   Bbuf_7_U        | ram_s2p array |           | 2    |      |        | Bbuf_7   | auto | 1       | 32, 64, 1        |
+|   Bbuf_8_U        | ram_s2p array |           | 2    |      |        | Bbuf_8   | auto | 1       | 32, 64, 1        |
+|   Bbuf_9_U        | ram_s2p array |           | 2    |      |        | Bbuf_9   | auto | 1       | 32, 64, 1        |
+|   Bbuf_10_U       | ram_s2p array |           | 2    |      |        | Bbuf_10  | auto | 1       | 32, 64, 1        |
+|   Bbuf_11_U       | ram_s2p array |           | 2    |      |        | Bbuf_11  | auto | 1       | 32, 64, 1        |
+|   Bbuf_12_U       | ram_s2p array |           | 2    |      |        | Bbuf_12  | auto | 1       | 32, 64, 1        |
+|   Bbuf_13_U       | ram_s2p array |           | 2    |      |        | Bbuf_13  | auto | 1       | 32, 64, 1        |
+|   Bbuf_14_U       | ram_s2p array |           | 2    |      |        | Bbuf_14  | auto | 1       | 32, 64, 1        |
+|   Bbuf_15_U       | ram_s2p array |           | 2    |      |        | Bbuf_15  | auto | 1       | 32, 64, 1        |
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-------------------------------------+--------------------------------------+
+| Type            | Options                             | Location                             |
++-----------------+-------------------------------------+--------------------------------------+
+| interface       | m_axi port=A offset=slave bundle=A  | ../src/mmult.cpp:18 in mmult, A      |
+| interface       | m_axi port=B offset=slave bundle=B  | ../src/mmult.cpp:19 in mmult, B      |
+| interface       | m_axi port=C offset=slave bundle=C  | ../src/mmult.cpp:20 in mmult, C      |
+| interface       | s_axilite port=return               | ../src/mmult.cpp:21 in mmult, return |
+| array_partition | variable=Abuf block factor=16 dim=2 | ../src/mmult.cpp:25 in mmult, Abuf   |
+| array_partition | variable=Bbuf block factor=16 dim=1 | ../src/mmult.cpp:26 in mmult, Bbuf   |
+| pipeline        |                                     | ../src/mmult.cpp:31 in mmult         |
+| pipeline        |                                     | ../src/mmult.cpp:39 in mmult         |
++-----------------+-------------------------------------+--------------------------------------+
+
+

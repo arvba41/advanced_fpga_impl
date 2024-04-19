@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:57.727+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_BREADY' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.906+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWUSER' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.852+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWREGION' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.845+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWQOS' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.839+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWPROT' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.830+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWCACHE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.818+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWLOCK' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.807+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWBURST' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.798+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWSIZE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.789+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWLEN' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.779+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWID' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.766+0200" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

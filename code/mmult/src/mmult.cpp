@@ -22,20 +22,23 @@ void mmult (float A[N*N], float B[N*N], float C[N*N])
      
      float Abuf[N][N], Bbuf[N][N];
 
-    
-     for(int i=0; i<N; i++) {
-          for(int j=0; j<N; j++) {
+	#pragma HLS ARRAY_PARTITION variable=Abuf block factor=16 dim=2
+	#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=16 dim=1
 
-               Abuf[i][j] = A[i * N + j];
-               Bbuf[i][j] = B[i * N + j];
+    
+     LOOP1 : for(int i=0; i<N; i++) {
+          LOOP2 : for(int j=0; j<N; j++) {
+				#pragma HLS PIPELINE
+               	Abuf[i][j] = A[i * N + j];
+                Bbuf[i][j] = B[i * N + j];
           }
      }
      
-     for (int i = 0; i < N; i++) {
-          for (int j = 0; j < N; j++) {
-
-               float result = 0;
-               for (int k = 0; k < N; k++) {
+     LOOP3 : for (int i = 0; i < N; i++) {
+    	 LOOP4 : for (int j = 0; j < N; j++) {
+			    #pragma HLS PIPELINE
+                float result = 0;
+                LOOP5 : for (int k = 0; k < N; k++) {
                     float term = Abuf[i][k] * Bbuf[k][j];
                     result += term;
                }

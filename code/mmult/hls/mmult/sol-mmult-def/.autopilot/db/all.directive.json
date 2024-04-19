@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "mmult",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "mmult"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl",
+    "sourceLine": 16,
+    "success": true
+  }
+]
