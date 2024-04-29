@@ -157,9 +157,39 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.474836817.1701142850" name="tb_mmult.cpp" rcbsApplicability="disable" resourcePath="testbench/tb_mmult.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.928721941.1947982656">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.928721941.1947982656" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.928721941">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1386879063" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1247754118" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.76287373" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1120155851" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.settings|sol-mmult-def|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|sol-mmult-def|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -305,9 +335,39 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.222659414.576064235" name="tb_mmult.cpp" rcbsApplicability="disable" resourcePath="testbench/tb_mmult.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.486396163.1937699039">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.486396163.1937699039" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.486396163">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1714061093" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1514116873" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/sw/xilinx/2023.2/Vitis_HLS/2023.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1044771780" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.814443935" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.settings|sol-mmult-def|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|sol-mmult-def|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -358,5 +418,7 @@
     </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope"/>
     
 </cproject>

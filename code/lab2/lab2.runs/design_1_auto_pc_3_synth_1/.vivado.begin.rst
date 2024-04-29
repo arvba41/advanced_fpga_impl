@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado" Owner="theli11" Host="muxen2-104.ad.liu.se" Pid="109681" HostCore="20" HostMemory="15806648">
-    </Process>
-</ProcessHandle>

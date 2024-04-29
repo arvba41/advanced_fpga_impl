@@ -13,7 +13,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_mmult_Pipeline_LOOP1_LOOP2_fu_242/grp_mmult_Pipeline_LOOP1_LOOP2_fu_242_activity": {
+				"grp_mmult_Pipeline_LOOP3_LOOP4_fu_230/grp_mmult_Pipeline_LOOP3_LOOP4_fu_230_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -23,7 +23,17 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_mmult_Pipeline_LOOP3_LOOP4_fu_284/grp_mmult_Pipeline_LOOP3_LOOP4_fu_284_activity": {
+				"grp_mmult_Pipeline_LOOPA1_LOOPA2_fu_199/grp_mmult_Pipeline_LOOPA1_LOOPA2_fu_199_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_mmult_Pipeline_LOOPB1_LOOPB2_fu_214/grp_mmult_Pipeline_LOOPB1_LOOPB2_fu_214_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

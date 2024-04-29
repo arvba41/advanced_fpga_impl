@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mmult'" level="0">
-<item name = "Date">Fri Apr 19 11:04:55 2024
+<item name = "Date">Mon Apr 29 16:17:37 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">mmult</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.014 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 8.619 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">2235, 2235, 22.350 us, 22.350 us, 2236, 2236, no</column>
+<column name="">26177, 26177, 0.262 ms, 0.262 ms, 26178, 26178, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mmult_Pipeline_LOOP1_LOOP2_fu_242">mmult_Pipeline_LOOP1_LOOP2, 1027, 1027, 10.270 us, 10.270 us, 1027, 1027, no</column>
-<column name="grp_mmult_Pipeline_LOOP3_LOOP4_fu_284">mmult_Pipeline_LOOP3_LOOP4, 1191, 1191, 11.910 us, 11.910 us, 1191, 1191, no</column>
+<column name="grp_mmult_Pipeline_LOOPA1_LOOPA2_fu_199">mmult_Pipeline_LOOPA1_LOOPA2, 1027, 1027, 10.270 us, 10.270 us, 1027, 1027, no</column>
+<column name="grp_mmult_Pipeline_LOOPB1_LOOPB2_fu_214">mmult_Pipeline_LOOPB1_LOOPB2, 1035, 1035, 10.350 us, 10.350 us, 1035, 1035, no</column>
+<column name="grp_mmult_Pipeline_LOOP3_LOOP4_fu_230">mmult_Pipeline_LOOP3_LOOP4, 588, 588, 5.880 us, 5.880 us, 588, 588, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- OUTERLOOP1_OUTERLOOP2">26176, 26176, 1636, -, -, 16, no</column>
 </table>
 </item>
 </section>

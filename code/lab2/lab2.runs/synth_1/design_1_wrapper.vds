@@ -3,68 +3,74 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri Apr 19 12:20:56 2024
-# Process ID: 116032
+# Start of session at: Mon Apr 29 16:13:35 2024
+# Process ID: 22878
 # Current directory: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.vds
 # Journal file: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/vivado.jou
-# Running On: muxen2-104.ad.liu.se, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 12, Host memory: 16186 MB
+# Running On: muxen1-113.ad.liu.se, OS: Linux, CPU Frequency: 2100.000 MHz, CPU Physical cores: 12, Host memory: 16185 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/sw/xilinx/2023.2/Vivado/2023.2/data/ip'.
+add_files: Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:06 . Memory (MB): peak = 1561.883 ; gain = 0.000 ; free physical = 8209 ; free virtual = 16356
+Command: read_checkpoint -auto_incremental -incremental /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top design_1_wrapper -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 116177
+INFO: [Synth 8-7075] Helper process launched with PID 23139
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2293.328 ; gain = 401.645 ; free physical = 7720 ; free virtual = 15272
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2297.133 ; gain = 403.559 ; free physical = 7085 ; free virtual = 15291
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:41]
 INFO: [Synth 8-3491] module 'design_1' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2023' bound to instance 'design_1_i' of component 'design_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:68]
 INFO: [Synth 8-638] synthesizing module 'design_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2053]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1295]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_7HNO1D' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:349]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_1_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:517]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_1_stub.vhdl:49]
-INFO: [Synth 8-3491] module 'design_1_auto_us_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_0_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:557]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_0_stub.vhdl:46]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_1' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_1_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:517]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_1_stub.vhdl:49]
+INFO: [Synth 8-3491] module 'design_1_auto_us_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_0_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:557]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_0_stub.vhdl:46]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_7HNO1D' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:349]
 INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_0' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1295]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_1_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1460]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1FI55ZU' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:57]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_2' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_2_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:225]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_2_stub.vhdl:49]
-INFO: [Synth 8-3491] module 'design_1_auto_us_1' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_1_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:265]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_1_stub.vhdl:46]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_2' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_2_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:225]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_2_stub.vhdl:49]
+INFO: [Synth 8-3491] module 'design_1_auto_us_1' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_1_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:265]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_1' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_1_stub.vhdl:46]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1FI55ZU' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_1_0' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1460]
 INFO: [Synth 8-638] synthesizing module 'design_1_axi_mem_intercon_2_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1631]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_ZRKJIY' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:959]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_3' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_3_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_3' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1156]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_3' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_3_stub.vhdl:56]
-INFO: [Synth 8-3491] module 'design_1_auto_us_2' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_2_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1203]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_us_2_stub.vhdl:52]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_3' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_3_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_3' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1156]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_3' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_3_stub.vhdl:56]
+INFO: [Synth 8-3491] module 'design_1_auto_us_2' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_2_stub.vhdl:6' bound to instance 'auto_us' of component 'design_1_auto_us_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1203]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_us_2' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_us_2_stub.vhdl:52]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_ZRKJIY' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:959]
 INFO: [Synth 8-256] done synthesizing module 'design_1_axi_mem_intercon_2_0' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1631]
-INFO: [Synth 8-3491] module 'design_1_mmult_0_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_mmult_0_0_stub.vhdl:6' bound to instance 'mmult_0' of component 'design_1_mmult_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2844]
-INFO: [Synth 8-638] synthesizing module 'design_1_mmult_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_mmult_0_0_stub.vhdl:152]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2987]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_processing_system7_0_0_stub.vhdl:213]
+INFO: [Synth 8-3491] module 'design_1_mmult_0_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_mmult_0_0_stub.vhdl:6' bound to instance 'mmult_0' of component 'design_1_mmult_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2844]
+INFO: [Synth 8-638] synthesizing module 'design_1_mmult_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_mmult_0_0_stub.vhdl:152]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_processing_system7_0_0_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2987]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_processing_system7_0_0_stub.vhdl:213]
 INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1836]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:663]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:844]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_auto_pc_0_stub.vhdl:71]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:844]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_auto_pc_0_stub.vhdl:71]
 INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:663]
 INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:1836]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:3255]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-116032-muxen2-104.ad.liu.se/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:6' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:3255]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/.Xil/Vivado-22878-muxen1-113.ad.liu.se/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:22]
 INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd:2053]
 INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:41]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_UYSKKA is either unconnected or has no load
@@ -87,18 +93,18 @@ WARNING: [Synth 8-7129] Port S_AXI_arlock[1] in module s00_couplers_imp_7HNO1D i
 WARNING: [Synth 8-7129] Port ACLK in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2380.266 ; gain = 488.582 ; free physical = 7611 ; free virtual = 15166
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2383.102 ; gain = 489.527 ; free physical = 6947 ; free virtual = 15179
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2395.109 ; gain = 503.426 ; free physical = 7608 ; free virtual = 15163
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2397.945 ; gain = 504.371 ; free physical = 6937 ; free virtual = 15169
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2395.109 ; gain = 503.426 ; free physical = 7608 ; free virtual = 15163
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2397.945 ; gain = 504.371 ; free physical = 6937 ; free virtual = 15169
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2395.109 ; gain = 0.000 ; free physical = 7608 ; free virtual = 15163
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2397.945 ; gain = 0.000 ; free physical = 6922 ; free virtual = 15171
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -127,20 +133,22 @@ Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/l
 Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2468.047 ; gain = 0.000 ; free physical = 7598 ; free virtual = 15153
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2470.883 ; gain = 0.000 ; free physical = 6909 ; free virtual = 15166
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2468.082 ; gain = 0.000 ; free physical = 7597 ; free virtual = 15152
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2470.918 ; gain = 0.000 ; free physical = 6910 ; free virtual = 15167
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7600 ; free virtual = 15163
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6911 ; free virtual = 15169
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7600 ; free virtual = 15163
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6911 ; free virtual = 15169
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -421,10 +429,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon_2/s00
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon_2/s00_couplers/auto_us. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon_2. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7600 ; free virtual = 15162
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6922 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7602 ; free virtual = 15165
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6921 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -466,25 +474,25 @@ WARNING: [Synth 8-7129] Port M00_ACLK in module design_1_axi_mem_intercon_0 is e
 WARNING: [Synth 8-7129] Port M00_ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_AXI_arlock[1] in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7595 ; free virtual = 15164
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7595 ; free virtual = 15164
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6911 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7595 ; free virtual = 15164
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6911 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7595 ; free virtual = 15164
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6911 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -502,37 +510,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -570,26 +578,26 @@ Report Cell Usage:
 |10    |design_1_rst_ps7_0_100M_0_bbox       |     1|
 +------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2468.082 ; gain = 503.426 ; free physical = 7596 ; free virtual = 15165
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2468.082 ; gain = 576.398 ; free physical = 7596 ; free virtual = 15165
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2470.918 ; gain = 504.371 ; free physical = 6907 ; free virtual = 15168
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2470.918 ; gain = 577.344 ; free physical = 6907 ; free virtual = 15168
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2468.082 ; gain = 0.000 ; free physical = 7885 ; free virtual = 15454
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2470.918 ; gain = 0.000 ; free physical = 7197 ; free virtual = 15457
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2468.082 ; gain = 0.000 ; free physical = 7884 ; free virtual = 15453
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2470.918 ; gain = 0.000 ; free physical = 7196 ; free virtual = 15457
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: 870fbb4f
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+62 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2468.082 ; gain = 943.965 ; free physical = 7884 ; free virtual = 15453
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2007.614; main = 1706.445; forked = 433.613
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4062.359; main = 2436.035; forked = 1626.324
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2470.918 ; gain = 909.035 ; free physical = 7196 ; free virtual = 15457
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2014.845; main = 1712.677; forked = 435.278
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4065.195; main = 2438.871; forked = 1626.324
 INFO: [Common 17-1381] The checkpoint '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 19 12:21:26 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 16:14:17 2024...

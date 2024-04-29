@@ -1,0 +1,2215 @@
+/*
+
+AMD Vivado v2023.2 (64-bit) [Major: 2023, Minor: 2]
+SW Build: 4029153 on Fri Oct 13 20:13:54 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+
+Process ID (PID): 181321
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Apr 29 13:30:38 CEST 2024
+Time zone: 	Central European Standard Time (Europe/Stockholm)
+
+OS: Red Hat Enterprise Linux release 8.9 (Ootpa)
+OS Version: 4.18.0-513.24.1.el8_9.x86_64
+OS Architecture: amd64
+Available processors (cores): 20
+LSB Release Description: Red Hat Enterprise Linux release 8.9 (Ootpa)
+
+Display: 1
+Screen size: 1920x1200
+Local screen bounds: x = 0, y = 28, width = 1920, height = 1134
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	17.0.7 64-bit
+JavaFX version: 17.0.1
+Java home: 	/sw/xilinx/2023.2/Vivado/2023.2/tps/lnx64/jre17.0.7_7
+Java executable: 	/sw/xilinx/2023.2/Vivado/2023.2/tps/lnx64/jre17.0.7_7/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	theli11
+User home directory: /home/theli11
+User working directory: /home/theli11/workspace/courses/advanced_fpga_impl
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /sw/xilinx/2023.2/Vivado
+HDI_APPROOT: /sw/xilinx/2023.2/Vivado/2023.2
+RDI_DATADIR: /sw/xilinx/2023.2/Vivado/2023.2/data
+RDI_BINDIR: /sw/xilinx/2023.2/Vivado/2023.2/bin
+
+Vivado preferences file: /home/theli11/.Xilinx/Vivado/2023.2/vivado.xml
+Vivado preferences directory: /home/theli11/.Xilinx/Vivado/2023.2/
+Vivado layouts directory: /home/theli11/.Xilinx/Vivado/2023.2/data/layouts
+PlanAhead jar file: 	/sw/xilinx/2023.2/Vivado/2023.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/theli11/workspace/courses/advanced_fpga_impl/vivado.log
+Vivado journal file: 	/home/theli11/workspace/courses/advanced_fpga_impl/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-181321-muxen1-113.ad.liu.se
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: classic
+RDI_APPROOT: /sw/xilinx/2023.2/Vivado/2023.2
+RDI_BASEROOT: /sw/xilinx/2023.2/Vivado
+RDI_BINROOT: /sw/xilinx/2023.2/Vivado/2023.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /sw/xilinx/2023.2/Vivado/2023.2/data
+RDI_INSTALLROOT: /sw/xilinx/2023.2
+RDI_INSTALLVER: 2023.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 17.0.7_7
+RDI_LIBDIR: /sw/xilinx/2023.2/Vivado/2023.2/lib/lnx64.o/Rhel/8:/sw/xilinx/2023.2/Vivado/2023.2/lib/lnx64.o/Rhel:/sw/xilinx/2023.2/Vivado/2023.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /sw/xilinx/2023.2/Vitis/2023.2/bin:/sw/xilinx/2023.2/Vivado/2023.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /sw/xilinx/2023.2/Vivado/2023.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/theli11/workspace/courses/advanced_fpga_impl:muxen1-113.ad.liu.se_1714390225_181221
+RDI_SHARED_DATA: /sw/xilinx/2023.2/SharedData/2023.2/data
+RDI_TPS_ROOT: /sw/xilinx/2023.2/Vivado/2023.2/tps/lnx64
+RDI_USE_JDK17: True
+SHELL: /bin/bash
+XILINX: /sw/xilinx/2023.2/Vivado/2023.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: 2100@xilinx.license.it.liu.se
+XILINX_DSP: /sw/xilinx/2023.2/Vivado/2023.2/ids_lite/ISE
+XILINX_HLS: /sw/xilinx/2023.2/Vitis_HLS/2023.2
+XILINX_PLANAHEAD: /sw/xilinx/2023.2/Vivado/2023.2
+XILINX_SDK: /sw/xilinx/2023.2/Vitis/2023.2
+XILINX_VITIS: /sw/xilinx/2023.2/Vitis/2023.2
+XILINX_VIVADO: /sw/xilinx/2023.2/Vivado/2023.2
+XILINX_VIVADO_HLS: /sw/xilinx/2023.2/Vivado/2023.2
+
+
+GUI allocated memory:	678 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,521 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,547 MB. GUI used memory: 70 MB. Current time: 4/29/24, 1:30:39 PM CEST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.xpr", 0); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// Opening Vivado Project: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.xpr. Version: Vivado v2023.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 155 MB (+159822kb) [00:01:08]
+// [Engine Memory]: 1,543 MB (+1466923kb) [00:01:08]
+// [Engine Memory]: 1,879 MB (+270404kb) [00:01:09]
+// [GUI Memory]: 175 MB (+13476kb) [00:01:09]
+// WARNING: HEventQueue.dispatchEvent() is taking  2435 ms.
+// Tcl Message: open_project /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,924 MB. GUI used memory: 107 MB. Current time: 4/29/24, 1:31:41 PM CEST
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/sw/xilinx/2023.2/Vivado/2023.2/data/ip'. 
+// Project name: lab2; location: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 8353.172 ; gain = 506.641 ; free physical = 378 ; free virtual = 14278 
+// Elapsed time: 18 seconds
+dismissDialog("Open Project"); // bq (Open Project Progress)
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 185 MB (+1211kb) [00:01:56]
+// Elapsed time: 95 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z020clg400-1 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,194 MB. GUI used memory: 111 MB. Current time: 4/29/24, 1:33:19 PM CEST
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// [Engine Memory]: 2,607 MB (+665377kb) [00:02:54]
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,627 MB. GUI used memory: 111 MB. Current time: 4/29/24, 1:33:27 PM CEST
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 2,742 MB (+4808kb) [00:02:55]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// [GUI Memory]: 197 MB (+2510kb) [00:02:56]
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1139 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.38 . Memory (MB): peak = 8774.348 ; gain = 0.000 ; free physical = 164 ; free virtual = 13830 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 1144 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2023.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_us/inst' Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_us/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_us/inst' Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_2/s00_couplers/auto_us/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_2/s00_couplers/auto_us/inst' 
+// Tcl Message: INFO: [Project 1-1714] 4 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). INFO: [Project 1-1687] 45 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design. 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 9034.871 ; gain = 0.000 ; free physical = 168 ; free virtual = 13669 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 4 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances  
+// Tcl Message: open_run: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 9294.398 ; gain = 638.082 ; free physical = 189 ; free virtual = 13542 
+// Device view-level: 0.0
+// 'dB' command handler elapsed time: 12 seconds
+// Elapsed time: 12 seconds
+dismissDialog("Open Synthesized Design"); // bq (Open Synthesized Design Progress)
+// [GUI Memory]: 216 MB (+9520kb) [00:02:59]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// [Engine Memory]: 2,894 MB (+15304kb) [00:03:00]
+// [Engine Memory]: 3,182 MB (+150640kb) [00:03:00]
+// RouteApi::initDelayMediator elapsed time: 3.1s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: open_bd_design {/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd} 
+// TclEventType: RSB_OPEN_DIAGRAM
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+// [GUI Memory]: 228 MB (+1715kb) [00:03:26]
+// Elapsed time: 26 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Run Synthesis"); // u (dialog0)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: INFO: [Project 1-1160] Copying file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.dcp to /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1 and adding it to utils fileset 
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 12 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 29 13:34:16 2024] Launched synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/runme.log 
+// 'i' command handler elapsed time: 12 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1146 ms. Increasing delay to 3438 ms.
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 50 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN, "Open Synthesized Design"); // a (PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN)
+selectRadioButton(PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION, "Run Implementation"); // a (PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION)
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (PAResourceCommand.PACommandNames_REPORTS_WINDOW)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // Q.a (dialog1)
+// Elapsed time: 14 seconds
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Timing Summary - Route Design ; report_timing_summary ; max_paths = 10; report_unconstrained = true;  ;  ; ", 61, "Timing Summary - Route Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+// Elapsed time: 19 seconds
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "Utilization - Place Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "Utilization - Place Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "Utilization - Place Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "Utilization - Place Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "report_utilization", 1, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Place Design ; report_utilization ;  ;  ; ", 47, "report_utilization", 1, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Fri Apr 19 12:18:37 CEST 2024 ; 7862", 7, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Fri Apr 19 12:18:37 CEST 2024 ; 7862", 7); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Fri Apr 19 12:18:37 CEST 2024 ; 7862", 7, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,331 MB. GUI used memory: 146 MB. Current time: 4/29/24, 1:35:59 PM CEST
+// Elapsed time: 23 seconds
+selectCodeEditor("Utilization - Synth Design - design_1_processing_system7_0_0_synth_1", 433, 124); // K (Utilization - Synth Design - design_1_processing_system7_0_0_synth_1)
+selectCodeEditor("Utilization - Synth Design - design_1_processing_system7_0_0_synth_1", 433, 124, false, false, false, false, true); // K (Utilization - Synth Design - design_1_processing_system7_0_0_synth_1) - Double Click
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:34:46 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:34:46 CEST 2024 ; 9528", 2); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:34:46 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,371 MB. GUI used memory: 145 MB. Current time: 4/29/24, 1:36:29 PM CEST
+// [Engine Memory]: 3,371 MB (+31212kb) [00:05:57]
+collapseTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Out-of-Context Module Runs ;  ;  ;  ; ", 4); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Out-of-Context Module Runs ;  ;  ;  ; ", 4); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+collapseTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Synth Design (synth_design) ;  ;  ;  ; ", 6); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+collapseTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "design_1 ;  ;  ;  ; ", 5); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// Tcl (Dont Echo) Command: 'rdi::info_commands {report*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {report_*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {report_uti*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {report_uti*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "report_utilization", true); // h.b (RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE)
+// Tcl Command: 'report_utilization'
+// Tcl Command: 'report_utilization'
+// Tcl Message: report_utilization 
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 159, 127); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// Elapsed time: 25 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Apr 29 13:37:26 2024] Launched impl_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 12 seconds
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+// HMemoryUtils.trashcanNow. Engine heap size: 3,403 MB. GUI used memory: 145 MB. Current time: 4/29/24, 1:37:44 PM CEST
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 561ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1851 ms. Increasing delay to 3000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1260ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1260 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2176 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 2011 ms. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2505 ms. Increasing delay to 7515 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1350ms to process. Increasing delay to 5000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1350 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 124 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Implementation Completed"); // Q.a (dialog2)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; route_design Complete! ; 0.31682389974594116 ; 0.0 ; 0.019865775480866432 ; 0.0 ;  ; 0.0 ; 1.6450233459472656 ; 0 ; 4 Warn ;  ;  ; 11960 ; 17289 ; 33.5 ; 0 ; 160 ; Mon Apr 29 13:37:29 CEST 2024 ; 00:02:07 ; Vivado Implementation Defaults (Vivado Implementation 2023) ; Vivado Implementation Default Reports (Vivado Implementation 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Default settings for Implementation.", 1, "11960", 16, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.2s
+// Elapsed time: 169 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: RUN_MODIFY
+dismissDialog("Run Synthesis"); // u (dialog3)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp with file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.dcp 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 12 
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 29 13:42:46 2024] Launched synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/runme.log 
+// 'i' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 45 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // Q.a (dialog4)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aa
+selectCodeEditor("Utilization - Synth Design - synth_1", 378, 308); // K (Utilization - Synth Design - synth_1)
+selectCodeEditor("Utilization - Synth Design - synth_1", 378, 308, false, false, false, false, true); // K (Utilization - Synth Design - synth_1) - Double Click
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aa
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Utilization]", 25, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+// HMemoryUtils.trashcanNow. Engine heap size: 3,460 MB. GUI used memory: 153 MB. Current time: 4/29/24, 1:44:14 PM CEST
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+// 'cp' command handler elapsed time: 4 seconds
+dismissDialog("Report Utilization"); // a (dialog5)
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+closeView(PAResourceOtoP.PAViews_DEVICE, "Device"); // G (PAResourceOtoP.PAViews_DEVICE, PlanAheadTabDevice)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Utilization]", 26, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Report Utilization"); // a (dialog6)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("Utilization - Synth Design - synth_1", 336, 453); // K (Utilization - Synth Design - synth_1)
+selectCodeEditor("Utilization - Synth Design - synth_1", 336, 453, false, false, false, false, true); // K (Utilization - Synth Design - synth_1) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("Utilization - Synth Design - synth_1", 466, 271); // K (Utilization - Synth Design - synth_1)
+// Elapsed time: 12 seconds
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // g (PAResourceOtoP.ProjectTab_RELOAD)
+// Tcl Message: refresh_design 
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 3,538 MB. GUI used memory: 150 MB. Current time: 4/29/24, 1:45:32 PM CEST
+// Engine heap size: 3,538 MB. GUI used memory: 151 MB. Current time: 4/29/24, 1:45:32 PM CEST
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.39 . Memory (MB): peak = 9920.387 ; gain = 0.000 ; free physical = 951 ; free virtual = 12705 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 1144 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2023.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: PLACEDB_MODIFY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc] for cell 'design_1_i/processing_system7_0/inst' 
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 3,538 MB. GUI used memory: 124 MB. Current time: 4/29/24, 1:45:35 PM CEST
+// [Engine Memory]: 3,549 MB (+9754kb) [00:15:04]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_clocks.xdc] for cell 'design_1_i/axi_mem_intercon/s00_couplers/auto_us/inst' Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_us/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_1/s00_couplers/auto_us/inst' Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_2/s00_couplers/auto_us/inst' 
+// Tcl Message: Finished Parsing XDC File [/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_us_2/design_1_auto_us_2_clocks.xdc] for cell 'design_1_i/axi_mem_intercon_2/s00_couplers/auto_us/inst' 
+// Tcl Message: INFO: [Project 1-1714] 4 XPM XDC files have been applied to the design. INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: INFO: [Project 1-1687] 45 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design. 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 10059.445 ; gain = 214.758 ; free physical = 960 ; free virtual = 12701 
+dismissDialog("Reloading"); // bq (Reloading Progress)
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:43:16 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, true, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Popup Trigger
+selectMenuItem(PAResourceEtoH.ExpReportTreePanel_OPEN_REPORT, "Open Report"); // ao (PAResourceEtoH.ExpReportTreePanel_OPEN_REPORT, Open Report)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 16, true); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+// Elapsed time: 14 seconds
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// 'i' command handler elapsed time: 7 seconds
+// Elapsed time: 10 seconds
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "806 warnings"); // g (PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// TclEventType: RSB_OPEN_DIAGRAM
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_bd_design {/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd} 
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 143, 175, 1192, 580, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// Elapsed time: 10 seconds
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 72, 448, 1192, 580, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0, "0", 16, true); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Node
+collapseTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0, "0", 16, true, false, false, false, false, true); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Double Click - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0, "0", 16, true); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Node
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 0 ; 0 ; 0.0 ; 0 ; 0 ; Mon Apr 29 13:42:47 CEST 2024 ; 00:00:39 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 0, "0", 16, true, false, false, false, false, true); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Double Click - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Wrote PlaceDB: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 966 ; free virtual = 12713 Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 963 ; free virtual = 12713 
+// Tcl Message: Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 956 ; free virtual = 12707 
+// Tcl Message: Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Wrote RouteStorage: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 951 ; free virtual = 12703 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,609 MB. GUI used memory: 155 MB. Current time: 4/29/24, 1:47:29 PM CEST
+// Tcl Message: Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 933 ; free virtual = 12680 Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 932 ; free virtual = 12680 Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 932 ; free virtual = 12680 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 29 13:47:35 2024] Launched impl_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 933 ; free virtual = 12677 
+// 'a' command handler elapsed time: 8 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1230ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1230 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 3827ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  3827 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 3,644 MB. GUI used memory: 154 MB. Current time: 4/29/24, 1:48:28 PM CEST
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 3067 ms. Increasing delay to 6000 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 485ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1256ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1256 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1365ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1365 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 86 seconds
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /mmult_0/ap_rst_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 157, 170, 1192, 580, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // al (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // al (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Block Properties..."); // ao (RDIResourceCommand.RDICommands_PROPERTIES, edit_properties_menu)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Properties", 1); // g (RDIResource.PropertiesView_TABBED_PANE)
+selectButton((HResource) null, "Properties_settings"); // v (Properties_settings): TRUE
+selectButton((HResource) null, "Properties_settings"); // v (Properties_settings): FALSE
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 123, 148, 1192, 580, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1098ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1098 ms.
+// TclEventType: RSB_BLOCK_SIZE
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5281 ms. Increasing delay to 15843 ms.
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RSB_BLOCK_SIZE
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+// TclEventType: RSB_BLOCK_SIZE
+dismissDialog("Implementation Completed"); // Q.a (dialog7)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 80 ms. Decreasing delay to 2080 ms.
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 30); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 30); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design, Report Utilization]", 38, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Tcl Message: open_run impl_1 
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 3,976 MB (+261614kb) [00:19:20]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,976 MB. GUI used memory: 156 MB. Current time: 4/29/24, 1:49:52 PM CEST
+// TclEventType: DESIGN_NEW
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 2435 ; free virtual = 12650 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 1044 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2023.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Read ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 10059.445 ; gain = 0.000 ; free physical = 2323 ; free virtual = 12549 
+// Tcl Message: INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. INFO: [Designutils 20-5722] Start Reading Physical Databases. 
+// Tcl Message: Reading placement. 
+// Tcl Message: Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10292.195 ; gain = 0.000 ; free physical = 2168 ; free virtual = 12393 
+// Tcl Message: Reading placer database... 
+// Tcl Message: Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 10292.195 ; gain = 0.000 ; free physical = 2168 ; free virtual = 12393 Read PlaceDB: Time (s): cpu = 00:00:00.55 ; elapsed = 00:00:00.53 . Memory (MB): peak = 10304.172 ; gain = 11.977 ; free physical = 2160 ; free virtual = 12385 Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10304.172 ; gain = 0.000 ; free physical = 2160 ; free virtual = 12385 
+// Tcl Message: Reading routing. 
+// Tcl Message: Read RouteStorage: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.29 . Memory (MB): peak = 10307.172 ; gain = 3.000 ; free physical = 2156 ; free virtual = 12381 Read Physdb Files: Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.86 . Memory (MB): peak = 10307.172 ; gain = 14.977 ; free physical = 2156 ; free virtual = 12381 
+// Tcl Message: Restored from archive | CPU: 0.890000 secs | Memory: 30.342171 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:00.86 . Memory (MB): peak = 10307.172 ; gain = 14.977 ; free physical = 2156 ; free virtual = 12381 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 10307.172 ; gain = 0.000 ; free physical = 2156 ; free virtual = 12381 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 6 instances were transformed.   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances   RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances   SRLC32E => SRL16E: 2 instances  
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 1.2s
+// Device view-level: 0.0
+// [Engine Memory]: 4,207 MB (+34248kb) [00:19:21]
+// TclEventType: POWER_UPDATED
+// [GUI Memory]: 244 MB (+4083kb) [00:19:22]
+// [GUI Memory]: 257 MB (+1060kb) [00:19:24]
+// [GUI Memory]: 271 MB (+732kb) [00:19:24]
+// [GUI Memory]: 284 MB (+292kb) [00:19:25]
+// WARNING: HEventQueue.dispatchEvent() is taking  3050 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+// Elapsed time: 14 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+// 'cp' command handler elapsed time: 4 seconds
+dismissDialog("Report Utilization"); // a (dialog8)
+// [Engine Memory]: 4,424 MB (+6711kb) [00:19:31]
+selectTree(PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE, "[Root, General Information]", 0, false); // a (PAResourceItoN.NavigableTimingReportTab_TIMING_REPORT_NAVIGATION_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design, Report Utilization]", 40, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// 'cp' command handler elapsed time: 3 seconds
+dismissDialog("Report Utilization"); // a (dialog9)
+// Tcl Message: report_utilization -name utilization_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,525 MB. GUI used memory: 201 MB. Current time: 4/29/24, 1:50:19 PM CEST
+// TclEventType: UTILIZATION_RESULT_GENERATED
+// [GUI Memory]: 300 MB (+1604kb) [00:19:48]
+// [GUI Memory]: 316 MB (+720kb) [00:19:48]
+// [Engine Memory]: 5,569 MB (+968616kb) [00:19:48]
+// [GUI Memory]: 334 MB (+2265kb) [00:19:48]
+// [GUI Memory]: 351 MB (+870kb) [00:19:49]
+// [GUI Memory]: 371 MB (+1885kb) [00:19:49]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,629 MB. GUI used memory: 267 MB. Current time: 4/29/24, 1:50:21 PM CEST
+dismissDialog("Report Utilization"); // bq (Report Utilization Progress)
+// [Engine Memory]: 6,163 MB (+330334kb) [00:20:08]
+// Elapsed time: 58 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_BLOCK_SIZE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t (PAResourceOtoP.PAViews_PROJECT_SUMMARY, PlanAheadTabProject Summary)
+// Tcl Message: open_bd_design {/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd} 
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+// TclEventType: RSB_BLOCK_SIZE
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// TclEventType: RSB_BLOCK_SIZE
+dismissDialog("Re-customize IP"); // m (dialog10)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 160, 148, 1192, 580, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_intf_pins /mmult_0/m_axi_C]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Settings]", 1, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl (Dont Echo) Command: 'rdi::info_commands {device::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {debug::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {*}'
+// TclEventType: RSB_CANVAS_LOCATION
+expandTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP]", 6); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Repository]", 7, false); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Packager]", 8, false); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Repository]", 7, false); // s (PAResourceQtoS.SettingsDialog_PROJECT_TREE, Project Tree)
+selectList(PAResourceQtoS.SettingsProjectIPRepositoryPage_REPOSITORY_CHOOSER, "/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult", 0); // X (PAResourceQtoS.SettingsProjectIPRepositoryPage_REPOSITORY_CHOOSER)
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL, "Refresh All"); // a (PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL)
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: RSB_CANVAS_LOCATION
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories 
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: RSB_CANVAS_LOCATION
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult'. 
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+// HMemoryUtils.trashcanNow. Engine heap size: 6,199 MB. GUI used memory: 266 MB. Current time: 4/29/24, 1:51:54 PM CEST
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// TclEventType: RSB_CANVAS_LOCATION
+dismissDialog("Settings"); // d (dialog11)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectButton((HResource) null, "/mmult_0"); // g
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[design_1, mmult_0]", 7, true, false, false, false, true, false); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE) - Popup Trigger - Node
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Block Properties..."); // ao (RDIResourceCommand.RDICommands_PROPERTIES, edit_properties_menu)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+// TclEventType: RSB_BLOCK_SIZE
+// TclEventType: RSB_CANVAS_LOCATION
+selectButton((HResource) null, "Properties_settings"); // v (Properties_settings): TRUE
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "General", 0); // g (RDIResource.PropertiesView_TABBED_PANE)
+selectButton((HResource) null, "Properties_settings"); // v (Properties_settings): TRUE
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "IP", 2); // g (RDIResource.PropertiesView_TABBED_PANE)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 156, 120, 1192, 553, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /mmult_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // al (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // al (PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, IP Documentation)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // al (PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, IP Documentation)
+selectMenuItem(PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC, "Customize Block..."); // ao (PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC, customize_rsb_block_menu)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Re-customize IP"); // m (dialog12)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 174, 151, 1192, 553, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /mmult_0/interrupt]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // al (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // al (PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // g (PAResourceQtoS.SystemTab_REPORT_IP_STATUS)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, "Upgrade IP"); // p.d (PAResourceItoN.IPStatusTablePanel_MORE_INFO)
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "/mmult_0 ; true ; design_1_mmult_0_0 [Mmult] (IP revision change) ; design_1_mmult_0_0 [Mmult] (IP revision change) ;  ; Mmult ; 1.0 (Rev. 2113521138) ; 1.0 (Rev. 2113535681) ; design_1_mmult_0_0 [Mmult] (IP revision change) ; xc7z020clg400-1", 1, "design_1_mmult_0_0 [Mmult] (IP revision change)", 3, false); // y (PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE)
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:mmult:1.0 [get_ips  design_1_mmult_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd' 
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded design_1_mmult_0_0 (Mmult 1.0) from revision 2113521138 to revision 2113535681 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd>  Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips design_1_mmult_0_0] -no_script -sync -force -quiet 
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// Elapsed Time for: 'L.f': 21m:20s
+// Elapsed Time for: 'L.f': 21m:22s
+// Elapsed time: 29 seconds
+selectTree(PAResourceQtoS.SimpleOutputProductDialog_OUTPUT_PRODUCT_TREE, "[root, design_1.bd]", 1, false); // Y.c (PAResourceQtoS.SimpleOutputProductDialog_OUTPUT_PRODUCT_TREE)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1365 ms. Increasing delay to 4095 ms.
+// Elapsed time: 16 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL, "Skip"); // a (PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL)
+dismissDialog("Generate Output Products"); // Y (dialog13)
+selectCheckBox(PAResourceItoN.IPStatusSectionPanel_IP_UP_TO_DATE, (String) null, true); // f (PAResourceItoN.IPStatusSectionPanel_IP_UP_TO_DATE): TRUE
+selectCheckBox(PAResourceItoN.IPStatusSectionPanel_IP_UP_TO_DATE, (String) null, false); // f (PAResourceItoN.IPStatusSectionPanel_IP_UP_TO_DATE): FALSE
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g (RDIResource.BaseReportTab_RERUN)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: open_bd_design {/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd} 
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Run Synthesis"); // u (dialog14)
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp with file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.dcp 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: launch_runs synth_1 -jobs 12 
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd>  Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui>  
+// Tcl Message: VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd 
+// Tcl Message: VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/sim/design_1.vhd VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block mmult_0 . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_1/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_1/s00_couplers/auto_us . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_2/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_2/s00_couplers/auto_us . 
+// Tcl Message: Exporting to file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh Generated Hardware Definition File /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.hwdef 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Apr 29 13:54:32 2024] Launched design_1_mmult_0_0_synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/design_1_mmult_0_0_synth_1/runme.log [Mon Apr 29 13:54:32 2024] Launched synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 11130.266 ; gain = 50.008 ; free physical = 1330 ; free virtual = 11570 
+// 'i' command handler elapsed time: 20 seconds
+// Elapsed time: 16 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed Time for: 'L.f': 22m:52s
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed Time for: 'L.f': 22m:54s
+// WARNING: HEventQueue.dispatchEvent() is taking  1376 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4285 ms. Increasing delay to 12855 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 717 ms. Decreasing delay to 2717 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3174 ms. Increasing delay to 9522 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 9218 ms. Increasing delay to 27654 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1151 ms. Increasing delay to 3000 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 821ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 152 ms. Decreasing delay to 2152 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1585 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5752 ms. Increasing delay to 17256 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 107 ms. Decreasing delay to 2107 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1249 ms. Increasing delay to 3747 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 3482 ms. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5648 ms. Increasing delay to 16944 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1431ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1431 ms.
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 244 ms. Decreasing delay to 2244 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1435 ms.
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2733 ms. Increasing delay to 8199 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2565 ms.
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 224 seconds
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Running Submodule Runs ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Fri Apr 19 12:17:57 CEST 2024 ; 241:40:18 ;  ;  ;  ;  ; ", 3); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Constraints", 1); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_mmult_0_0_synth_1 ; design_1_mmult_0_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 25128 ; 32845 ; 65.5 ; 0 ; 320 ; Mon Apr 29 13:54:33 CEST 2024 ; 00:03:51 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 6, "25128", 16, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_auto_pc_0 ;  ; Using cached IP results ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 7, (String) null, 16, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+collapseTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Submodule Runs Complete ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Fri Apr 19 12:17:57 CEST 2024 ; 241:40:27 ;  ;  ;  ;  ; ", 3); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 38 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Synthesis Completed"); // Q.a (dialog15)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+expandTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+closeView(PAResourceOtoP.PAViews_ADDRESS_EDITOR, "Address Editor"); // c (PAResourceOtoP.PAViews_ADDRESS_EDITOR, PlanAheadTabAddress Editor)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE, "Utilization - Synth Design ; report_utilization ;  ; Mon Apr 29 13:59:00 CEST 2024 ; 9528", 2, "Utilization - Synth Design", 0, false, false, false, false, false, true); // J (PAResourceEtoH.ExpReportTreePanel_EXP_REPORT_TREE_TABLE) - Double Click
+// Elapsed time: 21 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Submodule Runs Complete ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Fri Apr 19 12:17:57 CEST 2024 ; 241:40:27 ;  ;  ;  ;  ; ", 3, "design_1", 0, true); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE) - Node
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Submodule Runs Complete ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Fri Apr 19 12:17:57 CEST 2024 ; 241:40:27 ;  ;  ;  ;  ; ", 3); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// Elapsed time: 12 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_mmult_0_0_synth_1 ; design_1_mmult_0_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 25128 ; 32845 ; 65.5 ; 0 ; 320 ; Mon Apr 29 13:54:33 CEST 2024 ; 00:03:51 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 6, (String) null, 8, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTableHeader(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "Constraints", 1); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// Elapsed time: 15 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Mon Apr 29 14:00:39 2024] Launched impl_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 66 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // Q.a (dialog16)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Floorplan, Pblock, [DRC UTLZ-1] Resource utilization: DSP48E1 over-utilized in Top Level Design (This design requires more DSP48E1 cells than are available in the target device. This design requires 320 of such cell types but only 220 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.). ]", 5, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Node
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; place_design ERROR ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Apr 29 14:00:42 CEST 2024 ; 00:00:52 ; Vivado Implementation Defaults (Vivado Implementation 2023) ; Vivado Implementation Default Reports (Vivado Implementation 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Default settings for Implementation.", 1, "impl_1", 0, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// Elapsed time: 55 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_mmult_0_0_synth_1 ; design_1_mmult_0_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 25128 ; 32845 ; 65.5 ; 0 ; 320 ; Mon Apr 29 13:54:33 CEST 2024 ; 00:03:51 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 6, "65.5", 18, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1_mmult_0_0_synth_1 ; design_1_mmult_0_0 ; synth_design Complete! ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 25128 ; 32845 ; 65.5 ; 0 ; 320 ; Mon Apr 29 13:54:33 CEST 2024 ; 00:03:51 ; Vivado Synthesis Defaults (Vivado Synthesis 2023) ; Vivado Synthesis Default Reports (Vivado Synthesis 2023) ; xc7z020clg400-1 ; muxen1-113.ad.liu.se ; Vivado Synthesis Defaults", 6, "65.5", 18, false); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1339 ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1339 ms to process. Increasing delay to 2000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,001 MB. GUI used memory: 270 MB. Current time: 4/29/24, 2:21:54 PM CEST
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1192 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1192 ms to process. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,001 MB. GUI used memory: 251 MB. Current time: 4/29/24, 2:51:54 PM CEST
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 3291 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 3291 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4739 ms. Increasing delay to 14217 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 192 ms. Decreasing delay to 2192 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1196 ms. Increasing delay to 3588 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2528 ms. Increasing delay to 7584 ms.
+// Elapsed time: 4355 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 7267 ms. Increasing delay to 21801 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1218 ms. Decreasing delay to 3218 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1816 ms. Increasing delay to 5448 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3780 ms. Increasing delay to 11340 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1156 ms. Decreasing delay to 3156 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 3908 ms. Increasing delay to 11724 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1007 ms. Decreasing delay to 3007 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1644 ms. Increasing delay to 4932 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2946 ms. Increasing delay to 8838 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 4,953 MB. GUI used memory: 226 MB. Current time: 4/29/24, 3:21:54 PM CEST
+// Elapsed time: 494 seconds
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator]", 5, true); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Settings]", 1, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+selectButton(PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL, "Refresh All"); // a (PAResourceQtoS.SettingsProjectIPRepositoryPage_REFRESH_ALL)
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult'. 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog: Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:05 . Memory (MB): peak = 11130.266 ; gain = 0.000 ; free physical = 3004 ; free virtual = 10645 
+dismissDialog("Refresh All IP Repositories"); // bq (Refresh All IP Repositories Progress)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// WARNING: HEventQueue.dispatchEvent() is taking  1592 ms.
+dismissDialog("Settings"); // d (dialog11)
+selectButton(PAResourceQtoS.SystemTab_SHOW_IP_STATUS, "Show IP Status"); // g (PAResourceQtoS.SystemTab_SHOW_IP_STATUS)
+selectTreeTableHeader(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "Upgrade", 1); // y (PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE)
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g (RDIResource.BaseReportTab_RERUN)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// Tcl Message: upgrade_ip -vlnv xilinx.com:hls:mmult:1.0 [get_ips  design_1_mmult_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd' 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded design_1_mmult_0_0 (Mmult 1.0) from revision 2113535681 to revision 2113535782 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd>  
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/ip_upgrade.log'. 
+// Tcl Message: upgrade_ip: Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:15 . Memory (MB): peak = 11130.266 ; gain = 0.000 ; free physical = 3151 ; free virtual = 10670 
+// Tcl Message: export_ip_user_files -of_objects [get_ips design_1_mmult_0_0] -no_script -sync -force -quiet 
+// Elapsed time: 16 seconds
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 544ms to process. Increasing delay to 3000 ms.
+// Elapsed Time for: 'L.f': 01h:52m:57s
+selectRadioButton(PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_DESIGN_GLOBALLY, "Global"); // a (PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_DESIGN_GLOBALLY)
+// Elapsed Time for: 'L.f': 01h:53m:00s
+// Elapsed time: 11 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL, "Skip"); // a (PAResourceQtoS.SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL)
+dismissDialog("Generate Output Products"); // Y (dialog17)
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // g (RDIResource.BaseReportTab_RERUN)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+closeView(PAResourceOtoP.PAViews_PAR_REPORT, "PAR Report"); // c (PAResourceOtoP.PAViews_PAR_REPORT, PlanAheadTabPAR Report)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/utils_1/imports/synth_1/design_1_wrapper.dcp with file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/design_1_wrapper.dcp 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_runs: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:14 . Memory (MB): peak = 11206.754 ; gain = 0.000 ; free physical = 3185 ; free virtual = 10677 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: launch_runs synth_1 -jobs 12 
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// HMemoryUtils.trashcanNow. Engine heap size: 4,846 MB. GUI used memory: 222 MB. Current time: 4/29/24, 3:25:46 PM CEST
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: Wrote  : </home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.srcs/sources_1/bd/design_1/design_1.bd>  
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.vhd 
+// Tcl Message: VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/sim/design_1.vhd 
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: VHDL Output written to : /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block mmult_0 . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us . 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,832 MB. GUI used memory: 219 MB. Current time: 4/29/24, 3:26:16 PM CEST
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_1/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_1/s00_couplers/auto_us . 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_2/s00_couplers/auto_pc . 
+// Tcl Message: INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created. INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created. 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon_2/s00_couplers/auto_us . 
+// Tcl Message: Exporting to file /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: Generated Hardware Definition File /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/synth/design_1.hwdef 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_NEW
+// Tcl Message: config_ip_cache: Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:12 . Memory (MB): peak = 11206.754 ; gain = 0.000 ; free physical = 3111 ; free virtual = 10704 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,965 MB. GUI used memory: 221 MB. Current time: 4/29/24, 3:26:46 PM CEST
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Apr 29 15:26:50 2024] Launched design_1_mmult_0_0_synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/design_1_mmult_0_0_synth_1/runme.log [Mon Apr 29 15:26:50 2024] Launched synth_1... Run output will be captured here: /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.runs/synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:01:35 . Memory (MB): peak = 11278.773 ; gain = 72.020 ; free physical = 3085 ; free virtual = 10669 
+// Elapsed Time for: 'C.c': 01m:34s
+// 'i' command handler elapsed time: 108 seconds
+// Elapsed time: 108 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed Time for: 'L.f': 01h:55m:13s
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 610ms to process. Increasing delay to 4000 ms.
+// Elapsed Time for: 'L.f': 01h:55m:16s
+// Elapsed time: 16 seconds
+expandTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "design_1 ;  ; Running Submodule Runs ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Fri Apr 19 12:17:57 CEST 2024 ; 243:09:08 ;  ;  ;  ;  ; ", 3); // ao (PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE)
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 423ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1453 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4799 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 9772 ms. Increasing delay to 29316 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 18205 ms. Increasing delay to 54615 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 9386 ms. Increasing delay to 4000 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 1502ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1503 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 445 ms. Decreasing delay to 2445 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 1593 ms. Increasing delay to 4779 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4682 ms. Increasing delay to 14046 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 23171 ms. Increasing delay to 69513 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 12441 ms. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 3944 ms. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5546 ms. Increasing delay to 7000 ms.
+// WARNING: HTimer (ExpRunMonitor Open Timer) is taking 1732ms to process. Increasing delay to 6000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1732 ms.
+// WARNING: HTimer (ExpRunMonitor Open Timer) is taking 1661ms to process. Increasing delay to 6000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1661 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 8612 ms. Increasing delay to 8000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5285 ms. Increasing delay to 9000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 55699 ms. Increasing delay to 167097 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 6862 ms. Increasing delay to 10000 ms.
+// WARNING: HTimer (ExpRunMonitor Open Timer) is taking 1224ms to process. Increasing delay to 7000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1224 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1288 ms.

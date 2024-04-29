@@ -1,7 +1,7 @@
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: ../src/mmult.cpp, Line: 41, Column: 25 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 67, Column: 14 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Loop '''
@@ -17,12 +17,12 @@ Args:
   - String:          'Unrolling loop '''
   - LoopName:        LOOP5
   - String:          ''' ('
-  - LoopLoc:         '../src/mmult.cpp:41:25'
+  - LoopLoc:         '../src/mmult.cpp:67:14'
   - String:          ') '
   - String:          'in function '''
   - String:          mmult
   - String:          ''' completely with a factor of '
-  - Factor:          '32'
+  - Factor:          '64'
 ...
 --- !Passed
 Pass:            reflow-array-partition
@@ -39,7 +39,7 @@ Args:
   - Mode:            Block
   - String:          ' partitioning'
   - String:          ' with factor '
-  - Factor:          '16'
+  - Factor:          '8'
   - String:          ' on dimension '
   - Dim:             '2'
   - String:          .
@@ -59,7 +59,7 @@ Args:
   - Mode:            Block
   - String:          ' partitioning'
   - String:          ' with factor '
-  - Factor:          '16'
+  - Factor:          '8'
   - String:          ' on dimension '
   - Dim:             '1'
   - String:          .
@@ -67,7 +67,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Sequential '
@@ -76,133 +76,151 @@ Args:
   - Length:          '1024'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        A4seq
+  - AccessID:        scevgepseq
   - ArrayName:       A
   - String:          ' '
   - BundleName:      A
   - String:          ' '
-  - LoopName:        LOOP1
+  - LoopName:        LOOPA1
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:46:13'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 32, Column: 15 }
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 49, Column: 15 }
   - OrigDirection:   read
-  - OrigID:          for.inc.load.41
+  - OrigID:          for.inc.load.17
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Sequential '
   - Direction:       read
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        B5seq
+  - AccessID:        scevgep4seq
   - ArrayName:       B
   - String:          ' '
   - BundleName:      B
   - String:          ' '
-  - LoopName:        LOOP1
+  - LoopName:        LOOPB2
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:54:14'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 33, Column: 30 }
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 56, Column: 15 }
   - OrigDirection:   read
-  - OrigID:          arrayidx83.exit.load.2
+  - OrigID:          for.inc43.load.14
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: ../src/mmult.cpp, Line: 37, Column: 14 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Sequential '
   - Direction:       write
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        C6seq
-  - ArrayName:       C
-  - String:          ' '
-  - BundleName:      C
-  - String:          ' '
-  - LoopName:        LOOP3
-  - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:37:14'
-  - String:          ' '
-  - Function:        'mmult(float*, float*, float*)'
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
-  - String:          ' '
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      store
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 45, Column: 30 }
-  - OrigDirection:   write
-  - OrigID:          LOOP5.store.229
-...
---- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: ../src/mmult.cpp, Line: 37, Column: 14 }
-Function:        _Z5mmultPfS_S_
-Args:            
-  - String:          'Could not widen since type '
-  - Type:            float
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
-  - String:          ' _XLX_SEP_ '
-  - OrigAccess:      call
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 37, Column: 14 }
-  - OrigDirection:   write
-  - OrigID:          C6seq
+  - AccessID:        scevgep5seq
   - ArrayName:       C
   - String:          ' '
   - BundleName:      C
   - String:          ' '
   - LoopName:        LOOP4
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:38:15'
+  - LoopLoc:         '../src/mmult.cpp:64:13'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
   - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 72, Column: 38 }
+  - OrigDirection:   write
+  - OrigID:          LOOP5.store.452
 ...
 --- !Missed
-Pass:            reflow-burst-widen
-Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
 Function:        _Z5mmultPfS_S_
 Args:            
-  - String:          'Could not widen since type '
-  - Type:            float
-  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
-  - Threshold:       '0'
+  - String:          Stride is incompatible
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
   - OrigDirection:   read
-  - OrigID:          B5seq
+  - OrigID:          scevgep4seq
   - ArrayName:       B
   - String:          ' '
   - BundleName:      B
   - String:          ' '
-  - LoopName:        LOOP2
+  - LoopName:        LOOPB1
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:30:19'
+  - LoopLoc:         '../src/mmult.cpp:53:13'
+  - String:          ' '
+  - Function:        'mmult(float*, float*, float*)'
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
+Function:        _Z5mmultPfS_S_
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
+  - OrigDirection:   write
+  - OrigID:          scevgep5seq
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      C
+  - String:          ' '
+  - LoopName:        LOOP3
+  - String:          ' '
+  - LoopLoc:         '../src/mmult.cpp:63:12'
+  - String:          ' '
+  - Function:        'mmult(float*, float*, float*)'
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
+Function:        _Z5mmultPfS_S_
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       A
+  - String:          ' '
+  - BundleName:      A
+  - String:          ' '
+  - LoopName:        OUTERLOOP2
+  - String:          ' '
+  - LoopLoc:         '../src/mmult.cpp:44:21'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
@@ -211,7 +229,7 @@ Args:
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Could not widen since type '
@@ -220,16 +238,70 @@ Args:
   - Threshold:       '0'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
+  - OrigDirection:   write
+  - OrigID:          scevgep5seq
+  - ArrayName:       C
+  - String:          ' '
+  - BundleName:      C
+  - String:          ' '
+  - LoopName:        LOOP4
+  - String:          ' '
+  - LoopLoc:         '../src/mmult.cpp:64:13'
+  - String:          ' '
+  - Function:        'mmult(float*, float*, float*)'
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
+Function:        _Z5mmultPfS_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
   - OrigDirection:   read
-  - OrigID:          A4seq
+  - OrigID:          scevgep4seq
+  - ArrayName:       B
+  - String:          ' '
+  - BundleName:      B
+  - String:          ' '
+  - LoopName:        LOOPB2
+  - String:          ' '
+  - LoopLoc:         '../src/mmult.cpp:54:14'
+  - String:          ' '
+  - Function:        'mmult(float*, float*, float*)'
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
+Function:        _Z5mmultPfS_S_
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
   - ArrayName:       A
   - String:          ' '
   - BundleName:      A
   - String:          ' '
-  - LoopName:        LOOP2
+  - LoopName:        LOOPA2
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:30:19'
+  - LoopLoc:         '../src/mmult.cpp:47:14'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
@@ -238,7 +310,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
@@ -255,9 +327,9 @@ Args:
   - String:          ' '
   - BundleName:      A
   - String:          ' '
-  - LoopName:        LOOP1
+  - LoopName:        LOOPA1
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:46:13'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
@@ -266,7 +338,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 46, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
@@ -276,9 +348,9 @@ Args:
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        LOOP1
+  - LoopName:        LOOPA1
   - String:          '''('
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:46:13'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      A
@@ -288,13 +360,13 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' has been inferred.'
@@ -305,9 +377,9 @@ Args:
   - String:          ' '
   - BundleName:      B
   - String:          ' '
-  - LoopName:        LOOP1
+  - LoopName:        LOOPB2
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:54:14'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
@@ -316,19 +388,19 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 29, Column: 10 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 54, Column: 14 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       reads
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        LOOP1
+  - LoopName:        LOOPB2
   - String:          '''('
-  - LoopLoc:         '../src/mmult.cpp:29:10'
+  - LoopLoc:         '../src/mmult.cpp:54:14'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      B
@@ -338,13 +410,13 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 37, Column: 14 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' has been inferred.'
@@ -355,9 +427,9 @@ Args:
   - String:          ' '
   - BundleName:      C
   - String:          ' '
-  - LoopName:        LOOP3
+  - LoopName:        LOOP4
   - String:          ' '
-  - LoopLoc:         '../src/mmult.cpp:37:14'
+  - LoopLoc:         '../src/mmult.cpp:64:13'
   - String:          ' '
   - Function:        'mmult(float*, float*, float*)'
     DebugLoc:        { File: ../src/mmult.cpp, Line: 16, Column: 0 }
@@ -366,19 +438,19 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: ../src/mmult.cpp, Line: 37, Column: 14 }
+DebugLoc:        { File: ../src/mmult.cpp, Line: 64, Column: 13 }
 Function:        _Z5mmultPfS_S_
 Args:            
   - String:          'Multiple burst '
   - Direction:       writes
   - String:          ' of length '
-  - Length:          '1024'
+  - Length:          '16'
   - String:          ' and bit width '
   - Width:           '32'
   - String:          ' in loop '''
-  - LoopName:        LOOP3
+  - LoopName:        LOOP4
   - String:          '''('
-  - LoopLoc:         '../src/mmult.cpp:37:14'
+  - LoopLoc:         '../src/mmult.cpp:64:13'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      C

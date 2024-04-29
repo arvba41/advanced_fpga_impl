@@ -1,5 +1,8 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl:16:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/directives.tcl:7:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:18:9" msg_body="HLS pragma dump">
@@ -15,28 +18,31 @@
         <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:25:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Abuf block factor=16 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Abuf block factor=16/2 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:26:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Bbuf block factor=16 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Bbuf block factor=16/2 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:31:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:48:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:39:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:55:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="../src/mmult.cpp:41:25" msg_body="Loop 'LOOP5' is marked as complete unroll implied by the pipeline pragma">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../src/mmult.cpp:65:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="../src/mmult.cpp:67:14" msg_body="Loop 'LOOP5' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="LOOP5"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="../src/mmult.cpp:16:0" msg_body="Unrolling loop 'LOOP5' (../src/mmult.cpp:41:25) in function 'mmult' completely with a factor of 32">
-        <args Factor="32" LoopLoc="../src/mmult.cpp:41:25" LoopName="LOOP5"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="../src/mmult.cpp:16:0" msg_body="Unrolling loop 'LOOP5' (../src/mmult.cpp:67:14) in function 'mmult' completely with a factor of 64">
+        <args Factor="64" LoopLoc="../src/mmult.cpp:67:14" LoopName="LOOP5"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../src/mmult.cpp:23:8" msg_body="Applying array_partition to 'Abuf': Block partitioning with factor 16 on dimension 2.">
-        <args Dim="2" Factor="16" Mode="Block" UOName="Abuf"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../src/mmult.cpp:23:8" msg_body="Applying array_partition to 'Abuf': Block partitioning with factor 8 on dimension 2.">
+        <args Dim="2" Factor="8" Mode="Block" UOName="Abuf"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../src/mmult.cpp:23:22" msg_body="Applying array_partition to 'Bbuf': Block partitioning with factor 16 on dimension 1.">
-        <args Dim="1" Factor="16" Mode="Block" UOName="Bbuf"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../src/mmult.cpp:23:22" msg_body="Applying array_partition to 'Bbuf': Block partitioning with factor 8 on dimension 1.">
+        <args Dim="1" Factor="8" Mode="Block" UOName="Bbuf"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

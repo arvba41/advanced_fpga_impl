@@ -4,7 +4,7 @@
     "xci_name": "design_1_mmult_0_0",
     "cell_name": "mmult_0",
     "component_reference": "xilinx.com:hls:mmult:1.0",
-    "ip_revision": "2113521138",
+    "ip_revision": "2113535782",
     "gen_directory": "../../../../../../lab2.gen/sources_1/bd/design_1/ip/design_1_mmult_0_0",
     "parameters": {
       "component_parameters": {
@@ -48,7 +48,7 @@
         "clk_period": [ { "value": "10", "enabled": false, "usage": "all" } ],
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
-        "latency": [ { "value": "2235", "enabled": false, "usage": "all" } ],
+        "latency": [ { "value": "13713", "enabled": false, "usage": "all" } ],
         "II": [ { "value": "x", "enabled": false, "usage": "all" } ]
       },
       "model_parameters": {
@@ -103,7 +103,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2113521138" } ],
+        "IPREVISION": [ { "value": "2113535782" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../lab2.gen/sources_1/bd/design_1/ip/design_1_mmult_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

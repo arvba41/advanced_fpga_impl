@@ -2,7 +2,10 @@
 #ifndef _MMULTADD_H_
 #define _MMULTADD_H_
 
-#define N 32
+#define N 64
+
+#define Buff_Height 16
+#define Buff_Width 16
 
 
 

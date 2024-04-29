@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-// Date        : Fri Apr 19 12:18:52 2024
+// Date        : Fri Apr 19 12:18:43 2024
 // Host        : muxen2-104.ad.liu.se running 64-bit Red Hat Enterprise Linux release 8.9 (Ootpa)
-// Command     : write_verilog -force -mode synth_stub
-//               /home/theli11/workspace/courses/advanced_fpga_impl/code/lab2/lab2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_3/design_1_auto_pc_3_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_auto_pc_3 -prefix
+//               design_1_auto_pc_3_ design_1_auto_pc_3_stub.v
 // Design      : design_1_auto_pc_3
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

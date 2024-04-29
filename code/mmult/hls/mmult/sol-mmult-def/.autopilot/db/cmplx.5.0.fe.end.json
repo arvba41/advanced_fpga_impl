@@ -1,44 +1,71 @@
 {
+    "1": {
+        "name": "mmult_Pipeline_LOOPA1_LOOPA2",
+        "file": "..\/src\/mmult.cpp",
+        "fileloc": "46",
+        "instructions": "63",
+        "total_instructions": "63",
+        "calls": "",
+        "basicblocks": "13",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
     "0": {
         "name": "mmult",
         "file": "mmult.cpp",
         "fileloc": "15",
-        "instructions": "65",
-        "total_instructions": "544",
-        "calls": "2 1",
-        "basicblocks": "1"
-    },
-    "1": {
-        "name": "mmult_Pipeline_LOOP3_LOOP4",
-        "file": "..\/src\/mmult.cpp",
-        "fileloc": "37",
-        "instructions": "332",
-        "total_instructions": "332",
-        "calls": "",
-        "basicblocks": "6",
+        "instructions": "70",
+        "total_instructions": "866",
+        "calls": "1 2 3",
+        "basicblocks": "4",
         "loads": {
-            "L": "99"
+            "L": "3"
         },
         "stores": {
-            "L": "38"
+            "L": "6"
         },
         "loops": {
             "L": "1"
         }
     },
     "2": {
-        "name": "mmult_Pipeline_LOOP1_LOOP2",
+        "name": "mmult_Pipeline_LOOPB1_LOOPB2",
         "file": "..\/src\/mmult.cpp",
-        "fileloc": "29",
-        "instructions": "147",
-        "total_instructions": "147",
+        "fileloc": "53",
+        "instructions": "74",
+        "total_instructions": "74",
         "calls": "",
-        "basicblocks": "38",
+        "basicblocks": "15",
         "loads": {
             "L": "3"
         },
         "stores": {
-            "L": "38"
+            "L": "14"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "mmult_Pipeline_LOOP3_LOOP4",
+        "file": "..\/src\/mmult.cpp",
+        "fileloc": "63",
+        "instructions": "659",
+        "total_instructions": "659",
+        "calls": "",
+        "basicblocks": "8",
+        "loads": {
+            "L": "195"
+        },
+        "stores": {
+            "L": "70"
         },
         "loops": {
             "L": "1"

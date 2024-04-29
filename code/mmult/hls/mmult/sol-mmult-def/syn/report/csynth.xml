@@ -15,31 +15,49 @@
         <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>8.014</EstimatedClockPeriod>
+            <EstimatedClockPeriod>8.619</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>2235</Best-caseLatency>
-            <Average-caseLatency>2235</Average-caseLatency>
-            <Worst-caseLatency>2235</Worst-caseLatency>
-            <Best-caseRealTimeLatency>22.350 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>22.350 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>22.350 us</Worst-caseRealTimeLatency>
-            <Interval-min>2236</Interval-min>
-            <Interval-max>2236</Interval-max>
+            <Best-caseLatency>26177</Best-caseLatency>
+            <Average-caseLatency>26177</Average-caseLatency>
+            <Worst-caseLatency>26177</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.262 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.262 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.262 ms</Worst-caseRealTimeLatency>
+            <Interval-min>26178</Interval-min>
+            <Interval-max>26178</Interval-max>
         </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <OUTERLOOP1_OUTERLOOP2>
+                <Slack>7.30</Slack>
+                <TripCount>16</TripCount>
+                <Latency>26176</Latency>
+                <AbsoluteTimeLatency>261760</AbsoluteTimeLatency>
+                <IterationLatency>1636</IterationLatency>
+                <InstanceList/>
+            </OUTERLOOP1_OUTERLOOP2>
+        </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>../src/mmult.cpp:15</SourceLocation>
+            <SourceLocation>../src/mmult.cpp:44</SourceLocation>
+            <SummaryOfLoopViolations>
+                <OUTERLOOP1_OUTERLOOP2>
+                    <Name>OUTERLOOP1_OUTERLOOP2</Name>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../src/mmult.cpp:43</SourceLocation>
+                </OUTERLOOP1_OUTERLOOP2>
+            </SummaryOfLoopViolations>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>76</BRAM_18K>
-            <DSP>160</DSP>
-            <FF>20587</FF>
-            <LUT>28405</LUT>
+            <BRAM_18K>236</BRAM_18K>
+            <DSP>320</DSP>
+            <FF>39588</FF>
+            <LUT>53023</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -1897,34 +1915,41 @@
             <ModuleName>mmult</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_mmult_Pipeline_LOOP1_LOOP2_fu_242</InstName>
-                    <ModuleName>mmult_Pipeline_LOOP1_LOOP2</ModuleName>
+                    <InstName>grp_mmult_Pipeline_LOOPA1_LOOPA2_fu_199</InstName>
+                    <ModuleName>mmult_Pipeline_LOOPA1_LOOPA2</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>242</ID>
-                    <BindInstances>add_ln29_1_fu_642_p2 add_ln29_fu_710_p2 add_ln33_fu_755_p2 add_ln30_fu_679_p2</BindInstances>
+                    <ID>199</ID>
+                    <BindInstances>add_ln46_1_fu_249_p2 add_ln46_fu_311_p2 add_ln47_fu_297_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_mmult_Pipeline_LOOP3_LOOP4_fu_284</InstName>
+                    <InstName>grp_mmult_Pipeline_LOOPB1_LOOPB2_fu_214</InstName>
+                    <ModuleName>mmult_Pipeline_LOOPB1_LOOPB2</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>214</ID>
+                    <BindInstances>add_ln53_2_fu_289_p2 add_ln53_1_fu_301_p2 add_ln53_fu_353_p2 add_ln56_fu_421_p2 add_ln54_fu_379_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_mmult_Pipeline_LOOP3_LOOP4_fu_230</InstName>
                     <ModuleName>mmult_Pipeline_LOOP3_LOOP4</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>284</ID>
-                    <BindInstances>add_ln37_1_fu_1354_p2 add_ln37_fu_1366_p2 fmul_32ns_32ns_32_4_max_dsp_1_U69 fadd_32ns_32ns_32_5_full_dsp_1_U37 fmul_32ns_32ns_32_4_max_dsp_1_U70 fadd_32ns_32ns_32_5_full_dsp_1_U38 fmul_32ns_32ns_32_4_max_dsp_1_U71 fadd_32ns_32ns_32_5_full_dsp_1_U39 fmul_32ns_32ns_32_4_max_dsp_1_U72 fadd_32ns_32ns_32_5_full_dsp_1_U40 fmul_32ns_32ns_32_4_max_dsp_1_U73 fadd_32ns_32ns_32_5_full_dsp_1_U41 fmul_32ns_32ns_32_4_max_dsp_1_U74 fadd_32ns_32ns_32_5_full_dsp_1_U42 fmul_32ns_32ns_32_4_max_dsp_1_U75 fadd_32ns_32ns_32_5_full_dsp_1_U43 fmul_32ns_32ns_32_4_max_dsp_1_U76 fadd_32ns_32ns_32_5_full_dsp_1_U44 fmul_32ns_32ns_32_4_max_dsp_1_U77 fadd_32ns_32ns_32_5_full_dsp_1_U45 fmul_32ns_32ns_32_4_max_dsp_1_U78 fadd_32ns_32ns_32_5_full_dsp_1_U46 fmul_32ns_32ns_32_4_max_dsp_1_U79 fadd_32ns_32ns_32_5_full_dsp_1_U47 fmul_32ns_32ns_32_4_max_dsp_1_U80 fadd_32ns_32ns_32_5_full_dsp_1_U48 fmul_32ns_32ns_32_4_max_dsp_1_U81 fadd_32ns_32ns_32_5_full_dsp_1_U49 fmul_32ns_32ns_32_4_max_dsp_1_U82 fadd_32ns_32ns_32_5_full_dsp_1_U50 fmul_32ns_32ns_32_4_max_dsp_1_U83 fadd_32ns_32ns_32_5_full_dsp_1_U51 fmul_32ns_32ns_32_4_max_dsp_1_U84 fadd_32ns_32ns_32_5_full_dsp_1_U52 fmul_32ns_32ns_32_4_max_dsp_1_U85 fadd_32ns_32ns_32_5_full_dsp_1_U53 fmul_32ns_32ns_32_4_max_dsp_1_U86 fadd_32ns_32ns_32_5_full_dsp_1_U54 fmul_32ns_32ns_32_4_max_dsp_1_U87 fadd_32ns_32ns_32_5_full_dsp_1_U55 fmul_32ns_32ns_32_4_max_dsp_1_U88 fadd_32ns_32ns_32_5_full_dsp_1_U56 fmul_32ns_32ns_32_4_max_dsp_1_U89 fadd_32ns_32ns_32_5_full_dsp_1_U57 fmul_32ns_32ns_32_4_max_dsp_1_U90 fadd_32ns_32ns_32_5_full_dsp_1_U58 fmul_32ns_32ns_32_4_max_dsp_1_U91 fadd_32ns_32ns_32_5_full_dsp_1_U59 fmul_32ns_32ns_32_4_max_dsp_1_U92 fadd_32ns_32ns_32_5_full_dsp_1_U60 fmul_32ns_32ns_32_4_max_dsp_1_U93 fadd_32ns_32ns_32_5_full_dsp_1_U61 fmul_32ns_32ns_32_4_max_dsp_1_U94 fadd_32ns_32ns_32_5_full_dsp_1_U62 fmul_32ns_32ns_32_4_max_dsp_1_U95 fadd_32ns_32ns_32_5_full_dsp_1_U63 fmul_32ns_32ns_32_4_max_dsp_1_U96 fadd_32ns_32ns_32_5_full_dsp_1_U64 fmul_32ns_32ns_32_4_max_dsp_1_U97 fadd_32ns_32ns_32_5_full_dsp_1_U65 fmul_32ns_32ns_32_4_max_dsp_1_U98 fadd_32ns_32ns_32_5_full_dsp_1_U66 fmul_32ns_32ns_32_4_max_dsp_1_U99 fadd_32ns_32ns_32_5_full_dsp_1_U67 fmul_32ns_32ns_32_4_max_dsp_1_U100 fadd_32ns_32ns_32_5_full_dsp_1_U68 add_ln38_fu_1416_p2</BindInstances>
+                    <ID>230</ID>
+                    <BindInstances>add_ln63_1_fu_2544_p2 add_ln63_fu_2556_p2 empty_24_fu_3482_p2 add_ln68_fu_3063_p2 add_ln68_1_fu_3081_p2 add_ln68_2_fu_3099_p2 fmul_32ns_32ns_32_4_max_dsp_1_U86 fadd_32ns_32ns_32_5_full_dsp_1_U22 fmul_32ns_32ns_32_4_max_dsp_1_U126 fadd_32ns_32ns_32_5_full_dsp_1_U23 fmul_32ns_32ns_32_4_max_dsp_1_U87 fadd_32ns_32ns_32_5_full_dsp_1_U24 fmul_32ns_32ns_32_4_max_dsp_1_U127 fadd_32ns_32ns_32_5_full_dsp_1_U25 fmul_32ns_32ns_32_4_max_dsp_1_U88 fadd_32ns_32ns_32_5_full_dsp_1_U26 fmul_32ns_32ns_32_4_max_dsp_1_U128 fadd_32ns_32ns_32_5_full_dsp_1_U27 fmul_32ns_32ns_32_4_max_dsp_1_U89 fadd_32ns_32ns_32_5_full_dsp_1_U28 fmul_32ns_32ns_32_4_max_dsp_1_U90 fadd_32ns_32ns_32_5_full_dsp_1_U29 fmul_32ns_32ns_32_4_max_dsp_1_U91 fadd_32ns_32ns_32_5_full_dsp_1_U30 fmul_32ns_32ns_32_4_max_dsp_1_U129 fadd_32ns_32ns_32_5_full_dsp_1_U31 fmul_32ns_32ns_32_4_max_dsp_1_U92 fadd_32ns_32ns_32_5_full_dsp_1_U32 fmul_32ns_32ns_32_4_max_dsp_1_U130 fadd_32ns_32ns_32_5_full_dsp_1_U33 fmul_32ns_32ns_32_4_max_dsp_1_U93 fadd_32ns_32ns_32_5_full_dsp_1_U34 fmul_32ns_32ns_32_4_max_dsp_1_U131 fadd_32ns_32ns_32_5_full_dsp_1_U35 fmul_32ns_32ns_32_4_max_dsp_1_U94 fadd_32ns_32ns_32_5_full_dsp_1_U36 fmul_32ns_32ns_32_4_max_dsp_1_U95 fadd_32ns_32ns_32_5_full_dsp_1_U37 fmul_32ns_32ns_32_4_max_dsp_1_U96 fadd_32ns_32ns_32_5_full_dsp_1_U38 fmul_32ns_32ns_32_4_max_dsp_1_U132 fadd_32ns_32ns_32_5_full_dsp_1_U39 fmul_32ns_32ns_32_4_max_dsp_1_U97 fadd_32ns_32ns_32_5_full_dsp_1_U40 fmul_32ns_32ns_32_4_max_dsp_1_U133 fadd_32ns_32ns_32_5_full_dsp_1_U41 fmul_32ns_32ns_32_4_max_dsp_1_U98 fadd_32ns_32ns_32_5_full_dsp_1_U42 fmul_32ns_32ns_32_4_max_dsp_1_U134 fadd_32ns_32ns_32_5_full_dsp_1_U43 fmul_32ns_32ns_32_4_max_dsp_1_U99 fadd_32ns_32ns_32_5_full_dsp_1_U44 fmul_32ns_32ns_32_4_max_dsp_1_U100 fadd_32ns_32ns_32_5_full_dsp_1_U45 fmul_32ns_32ns_32_4_max_dsp_1_U101 fadd_32ns_32ns_32_5_full_dsp_1_U46 fmul_32ns_32ns_32_4_max_dsp_1_U135 fadd_32ns_32ns_32_5_full_dsp_1_U47 fmul_32ns_32ns_32_4_max_dsp_1_U102 fadd_32ns_32ns_32_5_full_dsp_1_U48 fmul_32ns_32ns_32_4_max_dsp_1_U136 fadd_32ns_32ns_32_5_full_dsp_1_U49 fmul_32ns_32ns_32_4_max_dsp_1_U103 fadd_32ns_32ns_32_5_full_dsp_1_U50 fmul_32ns_32ns_32_4_max_dsp_1_U137 fadd_32ns_32ns_32_5_full_dsp_1_U51 fmul_32ns_32ns_32_4_max_dsp_1_U104 fadd_32ns_32ns_32_5_full_dsp_1_U52 fmul_32ns_32ns_32_4_max_dsp_1_U105 fadd_32ns_32ns_32_5_full_dsp_1_U53 fmul_32ns_32ns_32_4_max_dsp_1_U106 fadd_32ns_32ns_32_5_full_dsp_1_U54 fmul_32ns_32ns_32_4_max_dsp_1_U138 fadd_32ns_32ns_32_5_full_dsp_1_U55 fmul_32ns_32ns_32_4_max_dsp_1_U107 fadd_32ns_32ns_32_5_full_dsp_1_U56 fmul_32ns_32ns_32_4_max_dsp_1_U139 fadd_32ns_32ns_32_5_full_dsp_1_U57 fmul_32ns_32ns_32_4_max_dsp_1_U108 fadd_32ns_32ns_32_5_full_dsp_1_U58 fmul_32ns_32ns_32_4_max_dsp_1_U140 fadd_32ns_32ns_32_5_full_dsp_1_U59 fmul_32ns_32ns_32_4_max_dsp_1_U109 fadd_32ns_32ns_32_5_full_dsp_1_U60 fmul_32ns_32ns_32_4_max_dsp_1_U110 fadd_32ns_32ns_32_5_full_dsp_1_U61 fmul_32ns_32ns_32_4_max_dsp_1_U111 fadd_32ns_32ns_32_5_full_dsp_1_U62 fmul_32ns_32ns_32_4_max_dsp_1_U141 fadd_32ns_32ns_32_5_full_dsp_1_U63 fmul_32ns_32ns_32_4_max_dsp_1_U112 fadd_32ns_32ns_32_5_full_dsp_1_U64 fmul_32ns_32ns_32_4_max_dsp_1_U142 fadd_32ns_32ns_32_5_full_dsp_1_U65 fmul_32ns_32ns_32_4_max_dsp_1_U113 fadd_32ns_32ns_32_5_full_dsp_1_U66 fmul_32ns_32ns_32_4_max_dsp_1_U143 fadd_32ns_32ns_32_5_full_dsp_1_U67 fmul_32ns_32ns_32_4_max_dsp_1_U114 fadd_32ns_32ns_32_5_full_dsp_1_U68 fmul_32ns_32ns_32_4_max_dsp_1_U115 fadd_32ns_32ns_32_5_full_dsp_1_U69 fmul_32ns_32ns_32_4_max_dsp_1_U116 fadd_32ns_32ns_32_5_full_dsp_1_U70 fmul_32ns_32ns_32_4_max_dsp_1_U144 fadd_32ns_32ns_32_5_full_dsp_1_U71 fmul_32ns_32ns_32_4_max_dsp_1_U117 fadd_32ns_32ns_32_5_full_dsp_1_U72 fmul_32ns_32ns_32_4_max_dsp_1_U145 fadd_32ns_32ns_32_5_full_dsp_1_U73 fmul_32ns_32ns_32_4_max_dsp_1_U118 fadd_32ns_32ns_32_5_full_dsp_1_U74 fmul_32ns_32ns_32_4_max_dsp_1_U146 fadd_32ns_32ns_32_5_full_dsp_1_U75 fmul_32ns_32ns_32_4_max_dsp_1_U119 fadd_32ns_32ns_32_5_full_dsp_1_U76 fmul_32ns_32ns_32_4_max_dsp_1_U120 fadd_32ns_32ns_32_5_full_dsp_1_U77 fmul_32ns_32ns_32_4_max_dsp_1_U121 fadd_32ns_32ns_32_5_full_dsp_1_U78 fmul_32ns_32ns_32_4_max_dsp_1_U147 fadd_32ns_32ns_32_5_full_dsp_1_U79 fmul_32ns_32ns_32_4_max_dsp_1_U122 fadd_32ns_32ns_32_5_full_dsp_1_U80 fmul_32ns_32ns_32_4_max_dsp_1_U148 fadd_32ns_32ns_32_5_full_dsp_1_U81 fmul_32ns_32ns_32_4_max_dsp_1_U123 fadd_32ns_32ns_32_5_full_dsp_1_U82 fmul_32ns_32ns_32_4_max_dsp_1_U149 fadd_32ns_32ns_32_5_full_dsp_1_U83 fmul_32ns_32ns_32_4_max_dsp_1_U124 fadd_32ns_32ns_32_5_full_dsp_1_U84 fmul_32ns_32ns_32_4_max_dsp_1_U125 fadd_32ns_32ns_32_5_full_dsp_1_U85 add_ln64_fu_2830_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>Abuf_U Abuf_1_U Abuf_2_U Abuf_3_U Abuf_4_U Abuf_5_U Abuf_6_U Abuf_7_U Abuf_8_U Abuf_9_U Abuf_10_U Abuf_11_U Abuf_12_U Abuf_13_U Abuf_14_U Abuf_15_U Bbuf_U Bbuf_1_U Bbuf_2_U Bbuf_3_U Bbuf_4_U Bbuf_5_U Bbuf_6_U Bbuf_7_U Bbuf_8_U Bbuf_9_U Bbuf_10_U Bbuf_11_U Bbuf_12_U Bbuf_13_U Bbuf_14_U Bbuf_15_U control_s_axi_U A_m_axi_U B_m_axi_U C_m_axi_U</BindInstances>
+            <BindInstances>Abuf_U Abuf_1_U Abuf_2_U Abuf_3_U Abuf_4_U Abuf_5_U Abuf_6_U Abuf_7_U Bbuf_U Bbuf_1_U Bbuf_2_U Bbuf_3_U Bbuf_4_U Bbuf_5_U Bbuf_6_U Bbuf_7_U add_ln43_2_fu_279_p2 add_ln43_fu_291_p2 add_ln43_1_fu_335_p2 add_ln44_fu_354_p2 control_s_axi_U A_m_axi_U B_m_axi_U C_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>mmult_Pipeline_LOOP1_LOOP2</Name>
+            <Name>mmult_Pipeline_LOOPA1_LOOPA2</Name>
             <Loops>
-                <LOOP1_LOOP2/>
+                <LOOPA1_LOOPA2/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>8.014</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>1027</Best-caseLatency>
@@ -1937,8 +1962,8 @@
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <LOOP1_LOOP2>
-                        <Name>LOOP1_LOOP2</Name>
+                    <LOOPA1_LOOPA2>
+                        <Name>LOOPA1_LOOPA2</Name>
                         <Slack>7.30</Slack>
                         <TripCount>1024</TripCount>
                         <Latency>1025</Latency>
@@ -1947,28 +1972,28 @@
                         <PipelineDepth>3</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </LOOP1_LOOP2>
+                    </LOOPA1_LOOPA2>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
-                    <IssueType>Timing Violation</IssueType>
+                    <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>../src/mmult.cpp:30</SourceLocation>
+                    <SourceLocation>../src/mmult.cpp:47</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <LOOP1_LOOP2>
-                            <Name>LOOP1_LOOP2</Name>
+                        <LOOPA1_LOOPA2>
+                            <Name>LOOPA1_LOOPA2</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>../src/mmult.cpp:29</SourceLocation>
-                        </LOOP1_LOOP2>
+                            <SourceLocation>../src/mmult.cpp:46</SourceLocation>
+                        </LOOPA1_LOOPA2>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>130</FF>
+                    <FF>67</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>179</LUT>
+                    <LUT>145</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
@@ -1983,10 +2008,84 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP1_LOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_1_fu_642_p2" SOURCE="../src/mmult.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP1_LOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_fu_710_p2" SOURCE="../src/mmult.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP1_LOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_755_p2" SOURCE="../src/mmult.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP1_LOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_fu_679_p2" SOURCE="../src/mmult.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPA1_LOOPA2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_1_fu_249_p2" SOURCE="../src/mmult.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPA1_LOOPA2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_fu_311_p2" SOURCE="../src/mmult.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPA1_LOOPA2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln47_fu_297_p2" SOURCE="../src/mmult.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln47"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>mmult_Pipeline_LOOPB1_LOOPB2</Name>
+            <Loops>
+                <LOOPB1_LOOPB2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.971</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1035</Best-caseLatency>
+                    <Average-caseLatency>1035</Average-caseLatency>
+                    <Worst-caseLatency>1035</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>10.350 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>10.350 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>10.350 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1035</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <LOOPB1_LOOPB2>
+                        <Name>LOOPB1_LOOPB2</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>1024</TripCount>
+                        <Latency>1033</Latency>
+                        <AbsoluteTimeLatency>10.330 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>11</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </LOOPB1_LOOPB2>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../src/mmult.cpp:54</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <LOOPB1_LOOPB2>
+                            <Name>LOOPB1_LOOPB2</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>../src/mmult.cpp:53</SourceLocation>
+                        </LOOPB1_LOOPB2>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>285</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>326</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>280</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPB1_LOOPB2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln53_2_fu_289_p2" SOURCE="../src/mmult.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln53_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPB1_LOOPB2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln53_1_fu_301_p2" SOURCE="../src/mmult.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln53_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPB1_LOOPB2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln53_fu_353_p2" SOURCE="../src/mmult.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPB1_LOOPB2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln56_fu_421_p2" SOURCE="../src/mmult.cpp:56" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOPB1_LOOPB2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln54_fu_379_p2" SOURCE="../src/mmult.cpp:54" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln54"/>
             </BindNodes>
         </Module>
         <Module>
@@ -1998,27 +2097,27 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>8.014</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>8.619</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>1191</Best-caseLatency>
-                    <Average-caseLatency>1191</Average-caseLatency>
-                    <Worst-caseLatency>1191</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>11.910 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>11.910 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>11.910 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>1191</PipelineInitiationInterval>
+                    <Best-caseLatency>588</Best-caseLatency>
+                    <Average-caseLatency>588</Average-caseLatency>
+                    <Worst-caseLatency>588</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>5.880 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>5.880 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>5.880 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>588</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <LOOP3_LOOP4>
                         <Name>LOOP3_LOOP4</Name>
                         <Slack>7.30</Slack>
-                        <TripCount>1024</TripCount>
-                        <Latency>1189</Latency>
-                        <AbsoluteTimeLatency>11.890 us</AbsoluteTimeLatency>
+                        <TripCount>256</TripCount>
+                        <Latency>586</Latency>
+                        <AbsoluteTimeLatency>5.860 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
-                        <PipelineDepth>167</PipelineDepth>
+                        <PipelineDepth>332</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </LOOP3_LOOP4>
@@ -2026,28 +2125,28 @@
                 <SummaryOfViolations>
                     <IssueType>Timing Violation</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>../src/mmult.cpp:38</SourceLocation>
+                    <SourceLocation>../src/mmult.cpp:64</SourceLocation>
                     <SummaryOfLoopViolations>
                         <LOOP3_LOOP4>
                             <Name>LOOP3_LOOP4</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>../src/mmult.cpp:37</SourceLocation>
+                            <SourceLocation>../src/mmult.cpp:63</SourceLocation>
                         </LOOP3_LOOP4>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <DSP>160</DSP>
+                    <DSP>320</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>72</UTIL_DSP>
-                    <FF>17515</FF>
+                    <UTIL_DSP>145</UTIL_DSP>
+                    <FF>36214</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>16</UTIL_FF>
-                    <LUT>23830</LUT>
+                    <UTIL_FF>34</UTIL_FF>
+                    <LUT>47988</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>44</UTIL_LUT>
+                    <UTIL_LUT>90</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -2057,151 +2156,235 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_1_fu_1354_p2" SOURCE="../src/mmult.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln37_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_fu_1366_p2" SOURCE="../src/mmult.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln37"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U69" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U37" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U70" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U38" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U71" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U39" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U72" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U40" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U73" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U41" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_4"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U74" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U42" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_5"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U75" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U43" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U76" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U44" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_7"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U77" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U45" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_8"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U78" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U46" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_9"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U79" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U47" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_10"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U80" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U48" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_11"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U81" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U49" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_12"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U82" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U50" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U83" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U51" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_14"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U84" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U52" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_15"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U85" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U53" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_16"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U86" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U54" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_17"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U87" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U55" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_18"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U88" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U56" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_19"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U89" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U57" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_20"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U90" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U58" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_21"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U91" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_22"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U59" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_22"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U92" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U60" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_23"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U93" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_24"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U61" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_24"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U94" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_25"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U62" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_25"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U95" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U63" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U96" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U64" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U97" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U65" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U98" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U66" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U99" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U67" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U100" SOURCE="../src/mmult.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="term_31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U68" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="result_31"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_1416_p2" SOURCE="../src/mmult.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_1_fu_2544_p2" SOURCE="../src/mmult.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln63_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_fu_2556_p2" SOURCE="../src/mmult.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="empty_24_fu_3482_p2" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_fu_3063_p2" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln68"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_1_fu_3081_p2" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln68_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln68_2_fu_3099_p2" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln68_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U86" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U22" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U126" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U23" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U87" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U24" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U127" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U25" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U88" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U26" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U128" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U27" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U89" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U28" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U90" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U29" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U91" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U30" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U129" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U31" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U92" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U32" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_10"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U130" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U33" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_11"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U93" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U34" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_12"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U131" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U35" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U94" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U36" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_14"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U95" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U37" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_15"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U96" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U38" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_16"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U132" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U39" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_17"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U97" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U40" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_18"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U133" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U41" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U98" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U42" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_20"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U134" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U43" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_21"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U99" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U44" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_22"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U100" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U45" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_23"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U101" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U46" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_24"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U135" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U47" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U102" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U48" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U136" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U49" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_27"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U103" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U50" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U137" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U51" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U104" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U52" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U105" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U53" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_31"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U106" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U54" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_32"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U138" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U55" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U107" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U56" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_34"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U139" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U57" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U108" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U58" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_36"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U140" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U59" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U109" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U60" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_38"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U110" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U61" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_39"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U111" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U62" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_40"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U141" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U63" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_41"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U112" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U64" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_42"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U142" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U65" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U113" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U66" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_44"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U143" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U67" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_45"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U114" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U68" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_46"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U115" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U69" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_47"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U116" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U70" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_48"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U144" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U71" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_49"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U117" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U72" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_50"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U145" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U73" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_51"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U118" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U74" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_52"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U146" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U75" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_53"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U119" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U76" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_54"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U120" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U77" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_55"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U121" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U78" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_56"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U147" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U79" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_57"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U122" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U80" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_58"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U148" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U81" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_59"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U123" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U82" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_60"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U149" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U83" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_61"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U124" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U84" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_62"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="LOOP3_LOOP4" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U125" SOURCE="../src/mmult.cpp:68" STORAGESUBTYPE="" URAM="0" VARIABLE="term_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="LOOP3_LOOP4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U85" SOURCE="../src/mmult.cpp:69" STORAGESUBTYPE="" URAM="0" VARIABLE="result_63"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="LOOP3_LOOP4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln64_fu_2830_p2" SOURCE="../src/mmult.cpp:64" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln64"/>
             </BindNodes>
         </Module>
         <Module>
             <Name>mmult</Name>
+            <Loops>
+                <OUTERLOOP1_OUTERLOOP2/>
+            </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>8.014</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>8.619</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2235</Best-caseLatency>
-                    <Average-caseLatency>2235</Average-caseLatency>
-                    <Worst-caseLatency>2235</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>22.350 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>22.350 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>22.350 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>2236</PipelineInitiationInterval>
+                    <Best-caseLatency>26177</Best-caseLatency>
+                    <Average-caseLatency>26177</Average-caseLatency>
+                    <Worst-caseLatency>26177</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.262 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.262 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.262 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>26178</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <OUTERLOOP1_OUTERLOOP2>
+                        <Name>OUTERLOOP1_OUTERLOOP2</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>16</TripCount>
+                        <Latency>26176</Latency>
+                        <AbsoluteTimeLatency>0.262 ms</AbsoluteTimeLatency>
+                        <IterationLatency>1636</IterationLatency>
+                        <PipelineDepth>1636</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_mmult_Pipeline_LOOPA1_LOOPA2_fu_199</Instance>
+                            <Instance>grp_mmult_Pipeline_LOOPB1_LOOPB2_fu_214</Instance>
+                            <Instance>grp_mmult_Pipeline_LOOP3_LOOP4_fu_230</Instance>
+                        </InstanceList>
+                    </OUTERLOOP1_OUTERLOOP2>
+                </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>../src/mmult.cpp:15</SourceLocation>
+                    <SourceLocation>../src/mmult.cpp:44</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <OUTERLOOP1_OUTERLOOP2>
+                            <Name>OUTERLOOP1_OUTERLOOP2</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>../src/mmult.cpp:43</SourceLocation>
+                        </OUTERLOOP1_OUTERLOOP2>
+                    </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>76</BRAM_18K>
+                    <BRAM_18K>236</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
-                    <UTIL_BRAM>27</UTIL_BRAM>
-                    <DSP>160</DSP>
+                    <UTIL_BRAM>84</UTIL_BRAM>
+                    <DSP>320</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>72</UTIL_DSP>
-                    <FF>20587</FF>
+                    <UTIL_DSP>145</UTIL_DSP>
+                    <FF>39588</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>19</UTIL_FF>
-                    <LUT>28405</LUT>
+                    <UTIL_FF>37</UTIL_FF>
+                    <LUT>53023</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>53</UTIL_LUT>
+                    <UTIL_LUT>99</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_1_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_1"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_2_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_2"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_3_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_3"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_4_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_4"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_5_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_5"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_6_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_6"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_7_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_7"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_8_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_8"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_9_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_9"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_10_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_10"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_11_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_11"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_12_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_12"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_13_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_13"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_14_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_14"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Abuf_15_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Abuf_15"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_1_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_1"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_2_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_2"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_3_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_3"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_4_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_4"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_5_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_5"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_6_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_6"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_7_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_7"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_8_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_8"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_9_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_9"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_10_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_10"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_11_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_11"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_12_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_12"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_13_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_13"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_14_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_14"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_s2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_s2p" PRAGMA="" RTLNAME="Bbuf_15_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 64 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_s2p array" URAM="0" VARIABLE="Bbuf_15"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_1_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_1"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_2_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_2"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_3_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_3"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_4_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_4"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_5_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_5"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_6_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_6"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Abuf_7_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Abuf_7"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_1_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_1"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_2_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_2"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_3_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_3"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_4_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_4"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_5_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_5"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_6_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_6"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_np" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_np" PRAGMA="" RTLNAME="Bbuf_7_U" SOURCE="../src/mmult.cpp:23" STORAGESIZE="32 128 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_np array" URAM="0" VARIABLE="Bbuf_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="OUTERLOOP1_OUTERLOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_2_fu_279_p2" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln43_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="OUTERLOOP1_OUTERLOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_fu_291_p2" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln43"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="OUTERLOOP1_OUTERLOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_1_fu_335_p2" SOURCE="../src/mmult.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln43_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="OUTERLOOP1_OUTERLOOP2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln44_fu_354_p2" SOURCE="../src/mmult.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln44"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="A" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="A_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="4" BUNDLEDNAME="B" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="B_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
@@ -2212,6 +2395,7 @@
     <FIFOInformation/>
     <UserConfigCommands>
         <config_compile pipeline_loops="0"/>
+        <config_export output="/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/vivado"/>
     </UserConfigCommands>
     <Args>
         <Arg ArgName="A" index="0" direction="in" srcType="float*" srcSize="32">
@@ -2623,20 +2807,23 @@
             <item name="Inferred Burst Summary">
                 <table>
                     <keys size="6">HW Interface, Direction, Length, Width, Loop, Loop Location</keys>
-                    <column name="m_axi_A">read, 1024, 32, LOOP1, ../src/mmult.cpp:29:10</column>
-                    <column name="m_axi_B">read, 1024, 32, LOOP1, ../src/mmult.cpp:29:10</column>
-                    <column name="m_axi_C">write, 1024, 32, LOOP3, ../src/mmult.cpp:37:14</column>
+                    <column name="m_axi_A">read, 1024, 32, LOOPA1, ../src/mmult.cpp:46:13</column>
+                    <column name="m_axi_B">read, 16, 32, LOOPB2, ../src/mmult.cpp:54:14</column>
+                    <column name="m_axi_C">write, 16, 32, LOOP4, ../src/mmult.cpp:64:13</column>
                 </table>
             </item>
             <item name="All M_AXI Variable Accesses">
                 <table>
                     <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
-                    <column name="m_axi_A">A, ../src/mmult.cpp:32:15, read, Widen Fail, , LOOP2, ../src/mmult.cpp:30:19, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_A">A, ../src/mmult.cpp:32:15, read, Inferred, 1024, LOOP1, ../src/mmult.cpp:29:10, , </column>
-                    <column name="m_axi_B">B, ../src/mmult.cpp:33:30, read, Widen Fail, , LOOP2, ../src/mmult.cpp:30:19, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_B">B, ../src/mmult.cpp:33:30, read, Inferred, 1024, LOOP1, ../src/mmult.cpp:29:10, , </column>
-                    <column name="m_axi_C">C, ../src/mmult.cpp:45:30, write, Widen Fail, , LOOP4, ../src/mmult.cpp:38:15, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_C">C, ../src/mmult.cpp:45:30, write, Inferred, 1024, LOOP3, ../src/mmult.cpp:37:14, , </column>
+                    <column name="m_axi_A">A, ../src/mmult.cpp:49:15, read, Widen Fail, , LOOPA2, ../src/mmult.cpp:47:14, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_A">A, ../src/mmult.cpp:49:15, read, Fail, , OUTERLOOP2, ../src/mmult.cpp:44:21, 214-230, Stride is incompatible</column>
+                    <column name="m_axi_A">A, ../src/mmult.cpp:49:15, read, Inferred, 1024, LOOPA1, ../src/mmult.cpp:46:13, , </column>
+                    <column name="m_axi_B">B, ../src/mmult.cpp:56:15, read, Widen Fail, , LOOPB2, ../src/mmult.cpp:54:14, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_B">B, ../src/mmult.cpp:56:15, read, Fail, , LOOPB1, ../src/mmult.cpp:53:13, 214-230, Stride is incompatible</column>
+                    <column name="m_axi_B">B, ../src/mmult.cpp:56:15, read, Inferred, 16, LOOPB2, ../src/mmult.cpp:54:14, , </column>
+                    <column name="m_axi_C">C, ../src/mmult.cpp:72:38, write, Widen Fail, , LOOP4, ../src/mmult.cpp:64:13, 214-353, Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_C">C, ../src/mmult.cpp:72:38, write, Fail, , LOOP3, ../src/mmult.cpp:63:12, 214-230, Stride is incompatible</column>
+                    <column name="m_axi_C">C, ../src/mmult.cpp:72:38, write, Inferred, 16, LOOP4, ../src/mmult.cpp:64:13, , </column>
                 </table>
             </item>
         </section>
@@ -2646,10 +2833,11 @@
         <Pragma type="interface" location="../src/mmult.cpp:19" status="valid" parentFunction="mmult" variable="B" isDirective="0" options="m_axi port=B offset=slave bundle=B"/>
         <Pragma type="interface" location="../src/mmult.cpp:20" status="valid" parentFunction="mmult" variable="C" isDirective="0" options="m_axi port=C offset=slave bundle=C"/>
         <Pragma type="interface" location="../src/mmult.cpp:21" status="valid" parentFunction="mmult" variable="return" isDirective="0" options="s_axilite port=return"/>
-        <Pragma type="array_partition" location="../src/mmult.cpp:25" status="valid" parentFunction="mmult" variable="Abuf" isDirective="0" options="variable=Abuf block factor=16 dim=2"/>
-        <Pragma type="array_partition" location="../src/mmult.cpp:26" status="valid" parentFunction="mmult" variable="Bbuf" isDirective="0" options="variable=Bbuf block factor=16 dim=1"/>
-        <Pragma type="pipeline" location="../src/mmult.cpp:31" status="valid" parentFunction="mmult" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="../src/mmult.cpp:39" status="valid" parentFunction="mmult" variable="" isDirective="0" options=""/>
+        <Pragma type="array_partition" location="../src/mmult.cpp:25" status="valid" parentFunction="mmult" variable="Abuf" isDirective="0" options="variable=Abuf block factor=16/2 dim=2"/>
+        <Pragma type="array_partition" location="../src/mmult.cpp:26" status="valid" parentFunction="mmult" variable="Bbuf" isDirective="0" options="variable=Bbuf block factor=16/2 dim=1"/>
+        <Pragma type="pipeline" location="../src/mmult.cpp:48" status="valid" parentFunction="mmult" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../src/mmult.cpp:55" status="valid" parentFunction="mmult" variable="" isDirective="0" options=""/>
+        <Pragma type="pipeline" location="../src/mmult.cpp:65" status="valid" parentFunction="mmult" variable="" isDirective="0" options=""/>
     </PragmaReport>
 </profile>
 

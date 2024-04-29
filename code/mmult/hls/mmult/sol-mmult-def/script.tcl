@@ -7,13 +7,13 @@
 open_project mmult
 set_top mmult
 add_files ../src/mmult.cpp
-add_files -tb ../src/tb_mmult.cpp
+add_files -tb ../src/tb_mmult.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "sol-mmult-def" -flow_target vivado
-set_part {xc7z020iclg400-1L}
+set_part {xc7z020i-clg400-1L}
 create_clock -period 10 -name default
 config_compile -pipeline_loops 0
-config_export -output /home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/vivado
-#source "./mmult/sol-mmult-def/directives.tcl"
+config_export -format ip_catalog -output /home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/vivado -rtl verilog
+source "./mmult/sol-mmult-def/directives.tcl"
 csim_design
 csynth_design
 cosim_design

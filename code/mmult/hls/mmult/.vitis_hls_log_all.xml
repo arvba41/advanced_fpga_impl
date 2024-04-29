@@ -3,24 +3,37 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:57.727+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_BREADY' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.906+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWUSER' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.852+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWREGION' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.845+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWQOS' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.839+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWPROT' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.830+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWCACHE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.818+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWLOCK' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.807+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWBURST' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.798+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWSIZE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.789+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWLEN' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.779+0200" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOP3_LOOP4/m_axi_C_AWID' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-19T11:04:56.766+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:40.790+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARUSER' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.238+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARREGION' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.225+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARQOS' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.211+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARPROT' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.196+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARCACHE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.183+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARLOCK' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.169+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARBURST' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.157+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARSIZE' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.142+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARLEN' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.130+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARID' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.117+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARADDR' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.104+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_LOOPA1_LOOPA2/m_axi_A_ARVALID' to 0." projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:38.090+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'mmult_Pipeline_LOOP3_LOOP4' consists of the following:&#xA;&#x9;'store' operation 0 bit ('j_write_ln64', ../src/mmult.cpp:64) of constant 0 on local variable 'j', ../src/mmult.cpp:64 [94]  (1.588 ns)&#xA;&#x9;'load' operation 5 bit ('j_load', ../src/mmult.cpp:64) on local variable 'j', ../src/mmult.cpp:64 [104]  (0.000 ns)&#xA;&#x9;'icmp' operation 1 bit ('icmp_ln64', ../src/mmult.cpp:64) [109]  (1.780 ns)&#xA;&#x9;'select' operation 5 bit ('select_ln63', ../src/mmult.cpp:63) [111]  (1.215 ns)&#xA;&#x9;'xor' operation 5 bit ('xor_ln68', ../src/mmult.cpp:68) [419]  (0.782 ns)&#xA;&#x9;'getelementptr' operation 7 bit ('Bbuf_addr_7', ../src/mmult.cpp:68) [422]  (0.000 ns)&#xA;&#x9;'load' operation 32 bit ('Bbuf_load_7', ../src/mmult.cpp:68) on array 'Bbuf' [501]  (3.254 ns)&#xA;&#xA;&#xA;Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-1016.html" projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:36.669+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (8.619 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).&#xA;Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-871.html" projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:36.656+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'mmult_Pipeline_LOOPB1_LOOPB2' consists of the following:&#xA;&#x9;'store' operation 0 bit ('i_write_ln53', ../src/mmult.cpp:53) of constant 0 on local variable 'i', ../src/mmult.cpp:53 [19]  (1.588 ns)&#xA;&#x9;'load' operation 7 bit ('i_load', ../src/mmult.cpp:53) on local variable 'i', ../src/mmult.cpp:53 [31]  (0.000 ns)&#xA;&#x9;'add' operation 7 bit ('add_ln53_1', ../src/mmult.cpp:53) [32]  (1.870 ns)&#xA;&#x9;'select' operation 7 bit ('select_ln53_1', ../src/mmult.cpp:53) [38]  (0.993 ns)&#xA;&#x9;'add' operation 64 bit ('add_ln53', ../src/mmult.cpp:53) [42]  (3.520 ns)&#xA;&#xA;&#xA;Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-1016.html" projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:35.920+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (7.971 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).&#xA;Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-871.html" projectName="mmult" solutionName="sol-mmult-def" date="2024-04-29T16:17:35.907+0200" type="Warning"/>
       </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

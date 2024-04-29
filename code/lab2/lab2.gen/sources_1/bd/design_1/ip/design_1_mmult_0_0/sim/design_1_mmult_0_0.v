@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:mmult:1.0
-// IP Revision: 2113521138
+// IP Revision: 2113535782
 
 `timescale 1ns/1ps
 

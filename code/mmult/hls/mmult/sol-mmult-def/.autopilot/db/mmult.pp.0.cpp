@@ -2584,20 +2584,17 @@ using std::wcstombs;
 using std::wctomb;
 # 4 "../src/mmult.cpp" 2
 # 1 "../src/mmult.h" 1
-
-
-
-
-
-
-
-
-__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[32*32], float B[32*32], float C[32*32]);
+# 12 "../src/mmult.h"
+__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[64*64], float B[64*64], float C[64*64]);
 # 5 "../src/mmult.cpp" 2
 # 15 "../src/mmult.cpp"
-__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[32*32], float B[32*32], float C[32*32])
+__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[64*64], float B[64*64], float C[64*64])
 {
-#line 16 "/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl"
+#line 17 "/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl"
+#pragma HLSDIRECTIVE TOP name=mmult
+# 16 "../src/mmult.cpp"
+
+#line 7 "/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=mmult
 # 16 "../src/mmult.cpp"
 
@@ -2607,29 +2604,43 @@ __attribute__((sdx_kernel("mmult", 0))) void mmult (float A[32*32], float B[32*3
 #pragma HLS INTERFACE m_axi port=C offset=slave bundle=C
 #pragma HLS INTERFACE s_axilite port=return
 
- float Abuf[32][32], Bbuf[32][32];
+ float Abuf[16][64], Bbuf[64][16];
 
-#pragma HLS ARRAY_PARTITION variable=Abuf block factor=16 dim=2
-#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=16 dim=1
+#pragma HLS ARRAY_PARTITION variable=Abuf block factor=16/2 dim=2
+#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=16/2 dim=1
+# 43 "../src/mmult.cpp"
+ OUTERLOOP1 : for(int m = 0; m < 64 / 16; m++) {
+       OUTERLOOP2 : for(int n = 0; n < 64 / 16; n++) {
 
-
- LOOP1 : for(int i=0; i<32; i++) {
-          LOOP2 : for(int j=0; j<32; j++) {
+   LOOPA1 : for(int i=0; i<16; i++) {
+    LOOPA2 : for(int j=0; j<64; j++) {
 #pragma HLS PIPELINE
- Abuf[i][j] = A[i * 32 + j];
-                Bbuf[i][j] = B[i * 32 + j];
-          }
-     }
+ Abuf[i][j] = A[(m * 64 * 16 + i * 64) + j];
+    }
+   }
 
-     LOOP3 : for (int i = 0; i < 32; i++) {
-      LOOP4 : for (int j = 0; j < 32; j++) {
+   LOOPB1 : for(int i=0; i<64; i++) {
+    LOOPB2 : for(int j=0; j<16; j++) {
+#pragma HLS PIPELINE
+ Bbuf[i][j] = B[64 * i + j + n * 16];
+    }
+   }
+
+
+
+
+   LOOP3 : for (int i = 0; i < 16; i++) {
+    LOOP4 : for (int j = 0; j < 16; j++) {
 #pragma HLS PIPELINE
  float result = 0;
-                LOOP5 : for (int k = 0; k < 32; k++) {
-                    float term = Abuf[i][k] * Bbuf[k][j];
-                    result += term;
-               }
-               C[i * 32 + j] = result;
-          }
+     LOOP5 : for(int k = 0; k < 64; k++) {
+      float term = Abuf[i][k] * Bbuf[k][j];
+      result += term;
      }
+
+    C[(m * 16 + i)* 64 + n * 16 + j] = result;
+    }
+   }
+  }
+ }
 }

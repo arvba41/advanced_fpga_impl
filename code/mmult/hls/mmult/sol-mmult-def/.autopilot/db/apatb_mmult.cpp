@@ -1097,7 +1097,7 @@ void apatb_mmult_hw(void* __xlx_apatb_param_A, void* __xlx_apatb_param_B, void* 
 #endif
   };
   port3.param = { __xlx_apatb_param_A };
-  port3.nbytes = { 4096 };
+  port3.nbytes = { 16384 };
   port3.offset = {  };
   port3.hasWrite = { false };
 
@@ -1121,7 +1121,7 @@ void apatb_mmult_hw(void* __xlx_apatb_param_A, void* __xlx_apatb_param_B, void* 
 #endif
   };
   port4.param = { __xlx_apatb_param_B };
-  port4.nbytes = { 4096 };
+  port4.nbytes = { 16384 };
   port4.offset = {  };
   port4.hasWrite = { false };
 
@@ -1154,7 +1154,7 @@ void apatb_mmult_hw(void* __xlx_apatb_param_A, void* __xlx_apatb_param_B, void* 
 #endif
   };
   port5.param = { __xlx_apatb_param_C };
-  port5.nbytes = { 4096 };
+  port5.nbytes = { 16384 };
   port5.offset = {  };
   port5.hasWrite = { true };
 

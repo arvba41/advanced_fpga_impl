@@ -37,6 +37,11 @@
 			<location>/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/.apc/.tb</location>
 		</link>
 		<link>
+			<name>.reference/mmult.h</name>
+			<type>1</type>
+			<location>/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/src/mmult.h</location>
+		</link>
+		<link>
 			<name>sol-mmult-def/constraints</name>
 			<type>2</type>
 			<location>/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/.tcls</location>

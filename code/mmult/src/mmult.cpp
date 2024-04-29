@@ -12,7 +12,7 @@
  * 4. Separate multiply-accumulate in inner loop to force two FP operators
  *
  */
-void mmult (float A[N*N], float B[N*N], float C[N*N]) 
+void mmult (float A[N*N], float B[N*N], float C[N*N])
 {
 
      #pragma HLS INTERFACE m_axi port=A offset=slave bundle=A
@@ -20,31 +20,80 @@ void mmult (float A[N*N], float B[N*N], float C[N*N])
      #pragma HLS INTERFACE m_axi port=C offset=slave bundle=C
      #pragma HLS INTERFACE s_axilite port=return
      
-     float Abuf[N][N], Bbuf[N][N];
+     float Abuf[Buff_Height][N], Bbuf[N][Buff_Width];
 
-	#pragma HLS ARRAY_PARTITION variable=Abuf block factor=16 dim=2
-	#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=16 dim=1
+	#pragma HLS ARRAY_PARTITION variable=Abuf block factor=Buff_Height/2 dim=2
+	#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=Buff_Width/2 dim=1
 
-    
-     LOOP1 : for(int i=0; i<N; i++) {
-          LOOP2 : for(int j=0; j<N; j++) {
-				#pragma HLS PIPELINE
-               	Abuf[i][j] = A[i * N + j];
-                Bbuf[i][j] = B[i * N + j];
-          }
-     }
-     
-     LOOP3 : for (int i = 0; i < N; i++) {
-    	 LOOP4 : for (int j = 0; j < N; j++) {
-			    #pragma HLS PIPELINE
-                float result = 0;
-                LOOP5 : for (int k = 0; k < N; k++) {
-                    float term = Abuf[i][k] * Bbuf[k][j];
-                    result += term;
-               }
-               C[i * N + j] = result;
-          }
-     }
+     // iteration 2
+     /*OUTERLOOP : for(int p = 0; p < k; p++) {
+
+    	 LOOP1 : for(int i=0; i<N; i++) {
+    		 LOOP2 : for(int j=0; j<N; j++) {
+    	 		#pragma HLS PIPELINE
+    	        Abuf[i][j] = A[i * k*N + j];
+    	        Bbuf[i][j] = B[i * k*N + j];
+    	     }
+    	 }
+
+    	 // Calculate C
+     }*/
+
+     // iteration 3
+      OUTERLOOP1 : for(int m = 0; m < N / Buff_Height; m++) {
+    	  OUTERLOOP2 : for(int n = 0; n < N / Buff_Width; n++) {
+
+			LOOPA1 : for(int i=0; i<Buff_Height; i++) {
+				LOOPA2 : for(int j=0; j<N; j++) {
+					#pragma HLS PIPELINE
+					Abuf[i][j] = A[(m * N * Buff_Height + i * N) +  j];
+				}
+			}
+
+			LOOPB1 : for(int i=0; i<N; i++) {
+				LOOPB2 : for(int j=0; j<Buff_Width; j++) {
+					#pragma HLS PIPELINE
+					Bbuf[i][j] = B[N * i + j + n * Buff_Width];
+				}
+			}
+
+
+
+			// Calculate C
+			LOOP3 : for (int i = 0; i < Buff_Height; i++) {
+				LOOP4 : for (int j = 0; j < Buff_Width; j++) {
+					#pragma HLS PIPELINE
+					float result = 0;
+					LOOP5 : for(int k = 0; k < N; k++) {
+						float term = Abuf[i][k] * Bbuf[k][j];
+						result += term;
+					}
+				// C[i * N + j] = result;
+				C[(m * Buff_Height + i)* N + n * Buff_Width + j] = result;
+				}
+			}
+		}
+	}
 }
+
+      /*LOOP1 : for(int i=0; i<N; i++) {
+           LOOP2 : for(int j=0; j<N; j++) {
+ 				#pragma HLS PIPELINE
+                	Abuf[i][j] = A[i * N + j];
+                 Bbuf[i][j] = B[i * N + j];
+           }
+      }
+
+      LOOP3 : for (int i = 0; i < N; i++) {
+     	 LOOP4 : for (int j = 0; j < N; j++) {
+ 			    #pragma HLS PIPELINE
+                 float result = 0;
+                 LOOP5 : for (int k = 0; k < N; k++) {
+                     float term = Abuf[i][k] * Bbuf[k][j];
+                     result += term;
+                }
+                C[i * N + j] = result;
+           }
+      }*/
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689

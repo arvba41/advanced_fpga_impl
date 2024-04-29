@@ -1,19 +1,19 @@
 {
   "0": {
-    "basicblocks": 43,
+    "basicblocks": 35,
     "calls": "",
     "file": "mmult.cpp",
     "fileloc": 15,
-    "instructions": 499,
+    "instructions": 593,
     "loads": {
-      "L": 64,
+      "L": 128,
       "T": 2
     },
     "name": "mmult",
     "stores": {
-      "L": 32,
+      "L": 16,
       "T": 1
     },
-    "total_instructions": 499
+    "total_instructions": 593
   }
 }

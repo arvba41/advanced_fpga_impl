@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mmult_Pipeline_LOOP3_LOOP4'" level="0">
-<item name = "Date">Fri Apr 19 11:04:55 2024
+<item name = "Date">Mon Apr 29 16:17:36 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">mmult</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.014 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 8.619 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1191, 1191, 11.910 us, 11.910 us, 1191, 1191, no</column>
+<column name="">588, 588, 5.880 us, 5.880 us, 588, 588, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP3_LOOP4">1189, 1189, 167, 1, 1, 1024, yes</column>
+<column name="- LOOP3_LOOP4">586, 586, 332, 1, 1, 256, yes</column>
 </table>
 </item>
 </section>

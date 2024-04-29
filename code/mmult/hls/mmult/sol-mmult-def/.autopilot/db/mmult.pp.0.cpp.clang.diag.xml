@@ -9,7 +9,23 @@
       <key>filename</key>
       <string>/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/csynth.tcl</string>
       <key>line</key>
-      <integer>16</integer>
+      <integer>17</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=name=mmult_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>/home/theli11/workspace/courses/advanced_fpga_impl/code/mmult/hls/mmult/sol-mmult-def/directives.tcl</string>
+      <key>line</key>
+      <integer>7</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -93,7 +109,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=variable=Abuf block factor=16 dim=2_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=variable=Abuf block factor=16/2 dim=2_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -109,7 +125,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=variable=Bbuf block factor=16 dim=1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=variable=Bbuf block factor=16/2 dim=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -121,7 +137,7 @@
       <key>filename</key>
       <string>../src/mmult.cpp</string>
       <key>line</key>
-      <integer>31</integer>
+      <integer>48</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -137,7 +153,23 @@
       <key>filename</key>
       <string>../src/mmult.cpp</string>
       <key>line</key>
-      <integer>39</integer>
+      <integer>55</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mmult_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>../src/mmult.cpp</string>
+      <key>line</key>
+      <integer>65</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
