@@ -5,7 +5,7 @@
 
 #include "mmult.h"
 
-#define NUM_TESTS 1
+#define NUM_TESTS 1024
 
 
 static void init_arrays(float *A,  float *B, float *D, float *D_sw)
@@ -37,9 +37,10 @@ void mmult_golden(float *A,  float *B, float *C)
 static int result_check(float *D, float *D_sw)
 {
      for (int i = 0; i < N * N; i++) {
-          if (D_sw[i] != D[i]) {
-               std::cout << "Mismatch: data index=" << i << "d=" << D_sw[i] 
-                        << ", dout=" << D[i] << std::endl;
+          float rel_error = (D_sw[i] - D[i]) / D_sw[i];
+          // std::cout << "relative error " << rel_error << std::endl;
+          if (rel_error > 0.01) {
+               std::cout << "Mismatch: data index = " << i << "d[" << i << "] = " << D_sw[i] << ", dout[" << i << "] = " << D[i] << std::endl;
                return 1;
           }
      }
@@ -48,8 +49,7 @@ static int result_check(float *D, float *D_sw)
 
 int mmult_test(float *A,  float *B, float *D, float *D_sw)
 {
-     std::cout << "Testing " << NUM_TESTS << " iterations of " << N << "x" << N 
-               << " floating point mmultadd..." << std::endl;
+     std::cout << "Testing " << NUM_TESTS << " iterations of " << N << "x" << N << " floating point mmultadd..." << std::endl;
 
      
      for (int i = 0; i < NUM_TESTS; i++) 

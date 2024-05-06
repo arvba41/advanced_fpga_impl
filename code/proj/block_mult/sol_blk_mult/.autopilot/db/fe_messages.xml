@@ -1,0 +1,51 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/arvba41/courses/advanced_fpga_impl/code/proj/block_mult/sol_blk_mult/csynth.tcl:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/arvba41/courses/advanced_fpga_impl/code/proj/block_mult/sol_blk_mult/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mmult" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A offset=slave bundle=A" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=B offset=slave bundle=B" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=C offset=slave bundle=C" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:34:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Abuf block factor=64 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=Bbuf block factor=64 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:37:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=result_buf type=complete dim=1" ARG_PragmaType="array_reshape" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:43:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/mmult.cpp:53:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mmult" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/mmult.cpp:55:15" msg_body="Loop 'PRODUCT' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="PRODUCT"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/mmult.cpp:15:0" msg_body="Unrolling loop 'PRODUCT' (src/mmult.cpp:55:15) in function 'mmult' completely with a factor of 32">
+        <args Factor="32" LoopLoc="src/mmult.cpp:55:15" LoopName="PRODUCT"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mmult.cpp:32:8" msg_body="Applying array_partition to 'Abuf': Block partitioning with factor 64 on dimension 2.">
+        <args Dim="2" Factor="64" Mode="Block" UOName="Abuf"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mmult.cpp:32:24" msg_body="Applying array_partition to 'Bbuf': Block partitioning with factor 64 on dimension 1.">
+        <args Dim="1" Factor="64" Mode="Block" UOName="Bbuf"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mmult.cpp:32:40" msg_body="Applying array_reshape to 'result_buf': Complete reshaping on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="result_buf"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

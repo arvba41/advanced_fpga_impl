@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mmult.cpp" path="/home/arvba41/courses/advanced_fpga_impl/code/proj/src/mmult.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_mmult.cpp" path="/home/arvba41/courses/advanced_fpga_impl/code/proj/src/tb_mmult.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

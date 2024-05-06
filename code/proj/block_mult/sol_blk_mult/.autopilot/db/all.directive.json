@@ -1,0 +1,44 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "mmult",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "mmult"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/arvba41/courses/advanced_fpga_impl/code/proj/block_mult/sol_blk_mult/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "mmult",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "mmult"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/arvba41/courses/advanced_fpga_impl/code/proj/block_mult/sol_blk_mult/csynth.tcl",
+    "sourceLine": 18,
+    "success": true
+  }
+]

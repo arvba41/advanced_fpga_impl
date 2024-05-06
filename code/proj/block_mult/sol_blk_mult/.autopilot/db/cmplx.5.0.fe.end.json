@@ -1,0 +1,57 @@
+{
+    "0": {
+        "name": "mmult",
+        "file": "mmult.cpp",
+        "fileloc": "15",
+        "instructions": "730",
+        "total_instructions": "1580",
+        "calls": "1 2",
+        "basicblocks": "7",
+        "loads": {
+            "L": "261"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "1": {
+        "name": "mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C",
+        "file": "src\/mmult.cpp",
+        "fileloc": "41",
+        "instructions": "435",
+        "total_instructions": "435",
+        "calls": "",
+        "basicblocks": "134",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "134"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "mmult_Pipeline_BREAK",
+        "file": "src\/mmult.cpp",
+        "fileloc": "32",
+        "instructions": "415",
+        "total_instructions": "415",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "3"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

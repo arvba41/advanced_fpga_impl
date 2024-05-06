@@ -1,0 +1,378 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mmult'
+================================================================
++ General Information: 
+    * Date:           Mon May  6 20:55:41 2024
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        block_mult
+    * Solution:       sol_blk_mult (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020i-clg400-1L
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+-----------+-----------+-------------+-------------+-----+
+    |                 Modules                 |  Issue |       | Latency |  Latency  | Iteration|         |  Trip |          |           |           |             |             |     |
+    |                 & Loops                 |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|   BRAM    |    DSP    |      FF     |     LUT     | URAM|
+    +-----------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+-----------+-----------+-------------+-------------+-----+
+    |+ mmult                                  |  Timing|  -0.95|  3309587|  3.310e+07|         -|  3309588|      -|        no|  268 (95%)|  160 (72%)|  27508 (25%)|  33931 (63%)|    -|
+    | + mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C  |  Timing|  -0.95|    16387|  1.639e+05|         -|    16387|      -|        no|          -|          -|    210 (~0%)|    205 (~0%)|    -|
+    |  o MEM_LOOP_R_MEM_LOOP_C                |       -|   7.30|    16385|  1.638e+05|         3|        1|  16384|       yes|          -|          -|            -|            -|    -|
+    | o MUL_ROW_MUL_COL                       |       -|   7.30|  3293184|  3.293e+07|       201|        -|  16384|        no|          -|          -|            -|            -|    -|
+    |  + mmult_Pipeline_BREAK                 |       -|   0.04|      170|  1.700e+03|         -|      170|      -|        no|          -|  158 (71%)|  15686 (14%)|  25039 (47%)|    -|
+    |   o BREAK                               |       -|   7.30|      168|  1.680e+03|       166|        1|      4|       yes|          -|          -|            -|            -|    -|
+    |  o RESULT                               |       -|   7.30|       24|    240.000|         6|        -|      4|        no|          -|          -|            -|            -|    -|
+    +-----------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+-----------+-----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_A   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_B   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_C   | 32 -> 32   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=4            |
++-----------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | A_offset_1 | 0x10   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | A_offset_2 | 0x14   | 32    | W      | Data signal of A_offset          |                                                                      |
+| s_axi_control | B_offset_1 | 0x1c   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | B_offset_2 | 0x20   | 32    | W      | Data signal of B_offset          |                                                                      |
+| s_axi_control | C_offset_1 | 0x28   | 32    | W      | Data signal of C_offset          |                                                                      |
+| s_axi_control | C_offset_2 | 0x2c   | 32    | W      | Data signal of C_offset          |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| B        | in        | float*   |
+| C        | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+
+| Argument | HW Interface  | HW Type   | HW Usage |
++----------+---------------+-----------+----------+
+| A        | m_axi_A       | interface |          |
+| A        | s_axi_control | interface | offset   |
+| B        | m_axi_B       | interface |          |
+| B        | s_axi_control | interface | offset   |
+| C        | m_axi_C       | interface |          |
+| C        | s_axi_control | interface | offset   |
++----------+---------------+-----------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+------------+---------------------+
+| HW Interface | Direction | Length | Width | Loop       | Loop Location       |
++--------------+-----------+--------+-------+------------+---------------------+
+| m_axi_A      | read      | 16384  | 32    | MEM_LOOP_R | src/mmult.cpp:41:15 |
+| m_axi_B      | read      | 16384  | 32    | MEM_LOOP_R | src/mmult.cpp:41:15 |
+| m_axi_C      | write     | 16384  | 32    | MUL_ROW    | src/mmult.cpp:49:12 |
++--------------+-----------+--------+-------+------------+---------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+---------------------+-----------+--------------+--------+------------+---------------------+------------+---------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location     | Direction | Burst Status | Length | Loop       | Loop Location       | Resolution | Problem                                                                                                 |
++--------------+----------+---------------------+-----------+--------------+--------+------------+---------------------+------------+---------------------------------------------------------------------------------------------------------+
+| m_axi_A      | A        | src/mmult.cpp:44:15 | read      | Widen Fail   |        | MEM_LOOP_C | src/mmult.cpp:42:16 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_A      | A        | src/mmult.cpp:44:15 | read      | Inferred     | 16384  | MEM_LOOP_R | src/mmult.cpp:41:15 |            |                                                                                                         |
+| m_axi_B      | B        | src/mmult.cpp:45:17 | read      | Widen Fail   |        | MEM_LOOP_C | src/mmult.cpp:42:16 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_B      | B        | src/mmult.cpp:45:17 | read      | Inferred     | 16384  | MEM_LOOP_R | src/mmult.cpp:41:15 |            |                                                                                                         |
+| m_axi_C      | C        | src/mmult.cpp:65:19 | write     | Widen Fail   |        | MUL_COL    | src/mmult.cpp:50:13 | 214-353    | Could not widen since type float size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_C      | C        | src/mmult.cpp:65:19 | write     | Inferred     | 16384  | MUL_ROW    | src/mmult.cpp:49:12 |            |                                                                                                         |
++--------------+----------+---------------------+-----------+--------------+--------+------------+---------------------+------------+---------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                    | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++-----------------------------------------+-----+--------+------------+------+---------+---------+
+| + mmult                                 | 160 |        |            |      |         |         |
+|   add_ln49_1_fu_4414_p2                 |     |        | add_ln49_1 | add  | fabric  | 0       |
+|   add_ln49_fu_4432_p2                   |     |        | add_ln49   | add  | fabric  | 0       |
+|   add_ln62_fu_4771_p2                   |     |        | add_ln62   | add  | fabric  | 0       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_U522   | 2   |        | result_1   | fadd | fulldsp | 4       |
+|   add_ln50_fu_4802_p2                   |     |        | add_ln50   | add  | fabric  | 0       |
+|  + mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C | 0   |        |            |      |         |         |
+|    add_ln41_1_fu_2178_p2                |     |        | add_ln41_1 | add  | fabric  | 0       |
+|    add_ln41_fu_2246_p2                  |     |        | add_ln41   | add  | fabric  | 0       |
+|    add_ln45_fu_2291_p2                  |     |        | add_ln45   | add  | fabric  | 0       |
+|    add_ln42_fu_2215_p2                  |     |        | add_ln42   | add  | fabric  | 0       |
+|  + mmult_Pipeline_BREAK                 | 158 |        |            |      |         |         |
+|    add_ln52_fu_2405_p2                  |     |        | add_ln52   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U165   | 3   |        | term       | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U166   | 3   |        | term_1     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U134  | 2   |        | add55_1    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U167   | 3   |        | term_2     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U135  | 2   |        | add55_2    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U168   | 3   |        | term_3     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U136  | 2   |        | add55_3    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U169   | 3   |        | term_4     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U137  | 2   |        | add55_4    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U170   | 3   |        | term_5     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U138  | 2   |        | add55_5    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U171   | 3   |        | term_6     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U139  | 2   |        | add55_6    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U172   | 3   |        | term_7     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U140  | 2   |        | add55_7    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U173   | 3   |        | term_8     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U141  | 2   |        | add55_8    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U174   | 3   |        | term_9     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U142  | 2   |        | add55_9    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U175   | 3   |        | term_10    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U143  | 2   |        | add55_s    | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U176   | 3   |        | term_11    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U144  | 2   |        | add55_10   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U177   | 3   |        | term_12    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U145  | 2   |        | add55_11   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U178   | 3   |        | term_13    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U146  | 2   |        | add55_12   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U179   | 3   |        | term_14    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U147  | 2   |        | add55_13   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U180   | 3   |        | term_15    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U148  | 2   |        | add55_14   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U181   | 3   |        | term_16    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U149  | 2   |        | add55_15   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U182   | 3   |        | term_17    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U150  | 2   |        | add55_16   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U183   | 3   |        | term_18    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U151  | 2   |        | add55_17   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U184   | 3   |        | term_19    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U152  | 2   |        | add55_18   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U185   | 3   |        | term_20    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U153  | 2   |        | add55_19   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U186   | 3   |        | term_21    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U154  | 2   |        | add55_20   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U187   | 3   |        | term_22    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U155  | 2   |        | add55_21   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U188   | 3   |        | term_23    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U156  | 2   |        | add55_22   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U189   | 3   |        | term_24    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U157  | 2   |        | add55_23   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U190   | 3   |        | term_25    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U158  | 2   |        | add55_24   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U191   | 3   |        | term_26    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U159  | 2   |        | add55_25   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U192   | 3   |        | term_27    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U160  | 2   |        | add55_26   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U193   | 3   |        | term_28    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U161  | 2   |        | add55_27   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U194   | 3   |        | term_29    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U162  | 2   |        | add55_28   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U195   | 3   |        | term_30    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U163  | 2   |        | add55_29   | fadd | fulldsp | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U196   | 3   |        | term_31    | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U164  | 2   |        | add55_30   | fadd | fulldsp | 4       |
++-----------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage         | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |               |           |      |      |        |          |      |         | Banks            |
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+| + mmult           |               |           | 268  | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface     | s_axilite |      |      |        |          |      |         |                  |
+|   A_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   B_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   C_m_axi_U       | interface     | m_axi     | 4    |      |        |          |      |         |                  |
+|   Abuf_U          | ram_s2p array |           | 2    |      |        | Abuf     | auto | 1       | 32, 256, 1       |
+|   Abuf_1_U        | ram_s2p array |           | 2    |      |        | Abuf_1   | auto | 1       | 32, 256, 1       |
+|   Abuf_2_U        | ram_s2p array |           | 2    |      |        | Abuf_2   | auto | 1       | 32, 256, 1       |
+|   Abuf_3_U        | ram_s2p array |           | 2    |      |        | Abuf_3   | auto | 1       | 32, 256, 1       |
+|   Abuf_4_U        | ram_s2p array |           | 2    |      |        | Abuf_4   | auto | 1       | 32, 256, 1       |
+|   Abuf_5_U        | ram_s2p array |           | 2    |      |        | Abuf_5   | auto | 1       | 32, 256, 1       |
+|   Abuf_6_U        | ram_s2p array |           | 2    |      |        | Abuf_6   | auto | 1       | 32, 256, 1       |
+|   Abuf_7_U        | ram_s2p array |           | 2    |      |        | Abuf_7   | auto | 1       | 32, 256, 1       |
+|   Abuf_8_U        | ram_s2p array |           | 2    |      |        | Abuf_8   | auto | 1       | 32, 256, 1       |
+|   Abuf_9_U        | ram_s2p array |           | 2    |      |        | Abuf_9   | auto | 1       | 32, 256, 1       |
+|   Abuf_10_U       | ram_s2p array |           | 2    |      |        | Abuf_10  | auto | 1       | 32, 256, 1       |
+|   Abuf_11_U       | ram_s2p array |           | 2    |      |        | Abuf_11  | auto | 1       | 32, 256, 1       |
+|   Abuf_12_U       | ram_s2p array |           | 2    |      |        | Abuf_12  | auto | 1       | 32, 256, 1       |
+|   Abuf_13_U       | ram_s2p array |           | 2    |      |        | Abuf_13  | auto | 1       | 32, 256, 1       |
+|   Abuf_14_U       | ram_s2p array |           | 2    |      |        | Abuf_14  | auto | 1       | 32, 256, 1       |
+|   Abuf_15_U       | ram_s2p array |           | 2    |      |        | Abuf_15  | auto | 1       | 32, 256, 1       |
+|   Abuf_16_U       | ram_s2p array |           | 2    |      |        | Abuf_16  | auto | 1       | 32, 256, 1       |
+|   Abuf_17_U       | ram_s2p array |           | 2    |      |        | Abuf_17  | auto | 1       | 32, 256, 1       |
+|   Abuf_18_U       | ram_s2p array |           | 2    |      |        | Abuf_18  | auto | 1       | 32, 256, 1       |
+|   Abuf_19_U       | ram_s2p array |           | 2    |      |        | Abuf_19  | auto | 1       | 32, 256, 1       |
+|   Abuf_20_U       | ram_s2p array |           | 2    |      |        | Abuf_20  | auto | 1       | 32, 256, 1       |
+|   Abuf_21_U       | ram_s2p array |           | 2    |      |        | Abuf_21  | auto | 1       | 32, 256, 1       |
+|   Abuf_22_U       | ram_s2p array |           | 2    |      |        | Abuf_22  | auto | 1       | 32, 256, 1       |
+|   Abuf_23_U       | ram_s2p array |           | 2    |      |        | Abuf_23  | auto | 1       | 32, 256, 1       |
+|   Abuf_24_U       | ram_s2p array |           | 2    |      |        | Abuf_24  | auto | 1       | 32, 256, 1       |
+|   Abuf_25_U       | ram_s2p array |           | 2    |      |        | Abuf_25  | auto | 1       | 32, 256, 1       |
+|   Abuf_26_U       | ram_s2p array |           | 2    |      |        | Abuf_26  | auto | 1       | 32, 256, 1       |
+|   Abuf_27_U       | ram_s2p array |           | 2    |      |        | Abuf_27  | auto | 1       | 32, 256, 1       |
+|   Abuf_28_U       | ram_s2p array |           | 2    |      |        | Abuf_28  | auto | 1       | 32, 256, 1       |
+|   Abuf_29_U       | ram_s2p array |           | 2    |      |        | Abuf_29  | auto | 1       | 32, 256, 1       |
+|   Abuf_30_U       | ram_s2p array |           | 2    |      |        | Abuf_30  | auto | 1       | 32, 256, 1       |
+|   Abuf_31_U       | ram_s2p array |           | 2    |      |        | Abuf_31  | auto | 1       | 32, 256, 1       |
+|   Abuf_32_U       | ram_s2p array |           | 2    |      |        | Abuf_32  | auto | 1       | 32, 256, 1       |
+|   Abuf_33_U       | ram_s2p array |           | 2    |      |        | Abuf_33  | auto | 1       | 32, 256, 1       |
+|   Abuf_34_U       | ram_s2p array |           | 2    |      |        | Abuf_34  | auto | 1       | 32, 256, 1       |
+|   Abuf_35_U       | ram_s2p array |           | 2    |      |        | Abuf_35  | auto | 1       | 32, 256, 1       |
+|   Abuf_36_U       | ram_s2p array |           | 2    |      |        | Abuf_36  | auto | 1       | 32, 256, 1       |
+|   Abuf_37_U       | ram_s2p array |           | 2    |      |        | Abuf_37  | auto | 1       | 32, 256, 1       |
+|   Abuf_38_U       | ram_s2p array |           | 2    |      |        | Abuf_38  | auto | 1       | 32, 256, 1       |
+|   Abuf_39_U       | ram_s2p array |           | 2    |      |        | Abuf_39  | auto | 1       | 32, 256, 1       |
+|   Abuf_40_U       | ram_s2p array |           | 2    |      |        | Abuf_40  | auto | 1       | 32, 256, 1       |
+|   Abuf_41_U       | ram_s2p array |           | 2    |      |        | Abuf_41  | auto | 1       | 32, 256, 1       |
+|   Abuf_42_U       | ram_s2p array |           | 2    |      |        | Abuf_42  | auto | 1       | 32, 256, 1       |
+|   Abuf_43_U       | ram_s2p array |           | 2    |      |        | Abuf_43  | auto | 1       | 32, 256, 1       |
+|   Abuf_44_U       | ram_s2p array |           | 2    |      |        | Abuf_44  | auto | 1       | 32, 256, 1       |
+|   Abuf_45_U       | ram_s2p array |           | 2    |      |        | Abuf_45  | auto | 1       | 32, 256, 1       |
+|   Abuf_46_U       | ram_s2p array |           | 2    |      |        | Abuf_46  | auto | 1       | 32, 256, 1       |
+|   Abuf_47_U       | ram_s2p array |           | 2    |      |        | Abuf_47  | auto | 1       | 32, 256, 1       |
+|   Abuf_48_U       | ram_s2p array |           | 2    |      |        | Abuf_48  | auto | 1       | 32, 256, 1       |
+|   Abuf_49_U       | ram_s2p array |           | 2    |      |        | Abuf_49  | auto | 1       | 32, 256, 1       |
+|   Abuf_50_U       | ram_s2p array |           | 2    |      |        | Abuf_50  | auto | 1       | 32, 256, 1       |
+|   Abuf_51_U       | ram_s2p array |           | 2    |      |        | Abuf_51  | auto | 1       | 32, 256, 1       |
+|   Abuf_52_U       | ram_s2p array |           | 2    |      |        | Abuf_52  | auto | 1       | 32, 256, 1       |
+|   Abuf_53_U       | ram_s2p array |           | 2    |      |        | Abuf_53  | auto | 1       | 32, 256, 1       |
+|   Abuf_54_U       | ram_s2p array |           | 2    |      |        | Abuf_54  | auto | 1       | 32, 256, 1       |
+|   Abuf_55_U       | ram_s2p array |           | 2    |      |        | Abuf_55  | auto | 1       | 32, 256, 1       |
+|   Abuf_56_U       | ram_s2p array |           | 2    |      |        | Abuf_56  | auto | 1       | 32, 256, 1       |
+|   Abuf_57_U       | ram_s2p array |           | 2    |      |        | Abuf_57  | auto | 1       | 32, 256, 1       |
+|   Abuf_58_U       | ram_s2p array |           | 2    |      |        | Abuf_58  | auto | 1       | 32, 256, 1       |
+|   Abuf_59_U       | ram_s2p array |           | 2    |      |        | Abuf_59  | auto | 1       | 32, 256, 1       |
+|   Abuf_60_U       | ram_s2p array |           | 2    |      |        | Abuf_60  | auto | 1       | 32, 256, 1       |
+|   Abuf_61_U       | ram_s2p array |           | 2    |      |        | Abuf_61  | auto | 1       | 32, 256, 1       |
+|   Abuf_62_U       | ram_s2p array |           | 2    |      |        | Abuf_62  | auto | 1       | 32, 256, 1       |
+|   Abuf_63_U       | ram_s2p array |           | 2    |      |        | Abuf_63  | auto | 1       | 32, 256, 1       |
+|   Bbuf_U          | ram_s2p array |           | 2    |      |        | Bbuf     | auto | 1       | 32, 256, 1       |
+|   Bbuf_1_U        | ram_s2p array |           | 2    |      |        | Bbuf_1   | auto | 1       | 32, 256, 1       |
+|   Bbuf_2_U        | ram_s2p array |           | 2    |      |        | Bbuf_2   | auto | 1       | 32, 256, 1       |
+|   Bbuf_3_U        | ram_s2p array |           | 2    |      |        | Bbuf_3   | auto | 1       | 32, 256, 1       |
+|   Bbuf_4_U        | ram_s2p array |           | 2    |      |        | Bbuf_4   | auto | 1       | 32, 256, 1       |
+|   Bbuf_5_U        | ram_s2p array |           | 2    |      |        | Bbuf_5   | auto | 1       | 32, 256, 1       |
+|   Bbuf_6_U        | ram_s2p array |           | 2    |      |        | Bbuf_6   | auto | 1       | 32, 256, 1       |
+|   Bbuf_7_U        | ram_s2p array |           | 2    |      |        | Bbuf_7   | auto | 1       | 32, 256, 1       |
+|   Bbuf_8_U        | ram_s2p array |           | 2    |      |        | Bbuf_8   | auto | 1       | 32, 256, 1       |
+|   Bbuf_9_U        | ram_s2p array |           | 2    |      |        | Bbuf_9   | auto | 1       | 32, 256, 1       |
+|   Bbuf_10_U       | ram_s2p array |           | 2    |      |        | Bbuf_10  | auto | 1       | 32, 256, 1       |
+|   Bbuf_11_U       | ram_s2p array |           | 2    |      |        | Bbuf_11  | auto | 1       | 32, 256, 1       |
+|   Bbuf_12_U       | ram_s2p array |           | 2    |      |        | Bbuf_12  | auto | 1       | 32, 256, 1       |
+|   Bbuf_13_U       | ram_s2p array |           | 2    |      |        | Bbuf_13  | auto | 1       | 32, 256, 1       |
+|   Bbuf_14_U       | ram_s2p array |           | 2    |      |        | Bbuf_14  | auto | 1       | 32, 256, 1       |
+|   Bbuf_15_U       | ram_s2p array |           | 2    |      |        | Bbuf_15  | auto | 1       | 32, 256, 1       |
+|   Bbuf_16_U       | ram_s2p array |           | 2    |      |        | Bbuf_16  | auto | 1       | 32, 256, 1       |
+|   Bbuf_17_U       | ram_s2p array |           | 2    |      |        | Bbuf_17  | auto | 1       | 32, 256, 1       |
+|   Bbuf_18_U       | ram_s2p array |           | 2    |      |        | Bbuf_18  | auto | 1       | 32, 256, 1       |
+|   Bbuf_19_U       | ram_s2p array |           | 2    |      |        | Bbuf_19  | auto | 1       | 32, 256, 1       |
+|   Bbuf_20_U       | ram_s2p array |           | 2    |      |        | Bbuf_20  | auto | 1       | 32, 256, 1       |
+|   Bbuf_21_U       | ram_s2p array |           | 2    |      |        | Bbuf_21  | auto | 1       | 32, 256, 1       |
+|   Bbuf_22_U       | ram_s2p array |           | 2    |      |        | Bbuf_22  | auto | 1       | 32, 256, 1       |
+|   Bbuf_23_U       | ram_s2p array |           | 2    |      |        | Bbuf_23  | auto | 1       | 32, 256, 1       |
+|   Bbuf_24_U       | ram_s2p array |           | 2    |      |        | Bbuf_24  | auto | 1       | 32, 256, 1       |
+|   Bbuf_25_U       | ram_s2p array |           | 2    |      |        | Bbuf_25  | auto | 1       | 32, 256, 1       |
+|   Bbuf_26_U       | ram_s2p array |           | 2    |      |        | Bbuf_26  | auto | 1       | 32, 256, 1       |
+|   Bbuf_27_U       | ram_s2p array |           | 2    |      |        | Bbuf_27  | auto | 1       | 32, 256, 1       |
+|   Bbuf_28_U       | ram_s2p array |           | 2    |      |        | Bbuf_28  | auto | 1       | 32, 256, 1       |
+|   Bbuf_29_U       | ram_s2p array |           | 2    |      |        | Bbuf_29  | auto | 1       | 32, 256, 1       |
+|   Bbuf_30_U       | ram_s2p array |           | 2    |      |        | Bbuf_30  | auto | 1       | 32, 256, 1       |
+|   Bbuf_31_U       | ram_s2p array |           | 2    |      |        | Bbuf_31  | auto | 1       | 32, 256, 1       |
+|   Bbuf_32_U       | ram_s2p array |           | 2    |      |        | Bbuf_32  | auto | 1       | 32, 256, 1       |
+|   Bbuf_33_U       | ram_s2p array |           | 2    |      |        | Bbuf_33  | auto | 1       | 32, 256, 1       |
+|   Bbuf_34_U       | ram_s2p array |           | 2    |      |        | Bbuf_34  | auto | 1       | 32, 256, 1       |
+|   Bbuf_35_U       | ram_s2p array |           | 2    |      |        | Bbuf_35  | auto | 1       | 32, 256, 1       |
+|   Bbuf_36_U       | ram_s2p array |           | 2    |      |        | Bbuf_36  | auto | 1       | 32, 256, 1       |
+|   Bbuf_37_U       | ram_s2p array |           | 2    |      |        | Bbuf_37  | auto | 1       | 32, 256, 1       |
+|   Bbuf_38_U       | ram_s2p array |           | 2    |      |        | Bbuf_38  | auto | 1       | 32, 256, 1       |
+|   Bbuf_39_U       | ram_s2p array |           | 2    |      |        | Bbuf_39  | auto | 1       | 32, 256, 1       |
+|   Bbuf_40_U       | ram_s2p array |           | 2    |      |        | Bbuf_40  | auto | 1       | 32, 256, 1       |
+|   Bbuf_41_U       | ram_s2p array |           | 2    |      |        | Bbuf_41  | auto | 1       | 32, 256, 1       |
+|   Bbuf_42_U       | ram_s2p array |           | 2    |      |        | Bbuf_42  | auto | 1       | 32, 256, 1       |
+|   Bbuf_43_U       | ram_s2p array |           | 2    |      |        | Bbuf_43  | auto | 1       | 32, 256, 1       |
+|   Bbuf_44_U       | ram_s2p array |           | 2    |      |        | Bbuf_44  | auto | 1       | 32, 256, 1       |
+|   Bbuf_45_U       | ram_s2p array |           | 2    |      |        | Bbuf_45  | auto | 1       | 32, 256, 1       |
+|   Bbuf_46_U       | ram_s2p array |           | 2    |      |        | Bbuf_46  | auto | 1       | 32, 256, 1       |
+|   Bbuf_47_U       | ram_s2p array |           | 2    |      |        | Bbuf_47  | auto | 1       | 32, 256, 1       |
+|   Bbuf_48_U       | ram_s2p array |           | 2    |      |        | Bbuf_48  | auto | 1       | 32, 256, 1       |
+|   Bbuf_49_U       | ram_s2p array |           | 2    |      |        | Bbuf_49  | auto | 1       | 32, 256, 1       |
+|   Bbuf_50_U       | ram_s2p array |           | 2    |      |        | Bbuf_50  | auto | 1       | 32, 256, 1       |
+|   Bbuf_51_U       | ram_s2p array |           | 2    |      |        | Bbuf_51  | auto | 1       | 32, 256, 1       |
+|   Bbuf_52_U       | ram_s2p array |           | 2    |      |        | Bbuf_52  | auto | 1       | 32, 256, 1       |
+|   Bbuf_53_U       | ram_s2p array |           | 2    |      |        | Bbuf_53  | auto | 1       | 32, 256, 1       |
+|   Bbuf_54_U       | ram_s2p array |           | 2    |      |        | Bbuf_54  | auto | 1       | 32, 256, 1       |
+|   Bbuf_55_U       | ram_s2p array |           | 2    |      |        | Bbuf_55  | auto | 1       | 32, 256, 1       |
+|   Bbuf_56_U       | ram_s2p array |           | 2    |      |        | Bbuf_56  | auto | 1       | 32, 256, 1       |
+|   Bbuf_57_U       | ram_s2p array |           | 2    |      |        | Bbuf_57  | auto | 1       | 32, 256, 1       |
+|   Bbuf_58_U       | ram_s2p array |           | 2    |      |        | Bbuf_58  | auto | 1       | 32, 256, 1       |
+|   Bbuf_59_U       | ram_s2p array |           | 2    |      |        | Bbuf_59  | auto | 1       | 32, 256, 1       |
+|   Bbuf_60_U       | ram_s2p array |           | 2    |      |        | Bbuf_60  | auto | 1       | 32, 256, 1       |
+|   Bbuf_61_U       | ram_s2p array |           | 2    |      |        | Bbuf_61  | auto | 1       | 32, 256, 1       |
+|   Bbuf_62_U       | ram_s2p array |           | 2    |      |        | Bbuf_62  | auto | 1       | 32, 256, 1       |
+|   Bbuf_63_U       | ram_s2p array |           | 2    |      |        | Bbuf_63  | auto | 1       | 32, 256, 1       |
++-------------------+---------------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------------+---------------------------------------+
+| Type            | Options                                 | Location                              |
++-----------------+-----------------------------------------+---------------------------------------+
+| interface       | m_axi port=A offset=slave bundle=A      | src/mmult.cpp:27 in mmult, A          |
+| interface       | m_axi port=B offset=slave bundle=B      | src/mmult.cpp:28 in mmult, B          |
+| interface       | m_axi port=C offset=slave bundle=C      | src/mmult.cpp:29 in mmult, C          |
+| interface       | s_axilite port=return                   | src/mmult.cpp:30 in mmult, return     |
+| array_partition | variable=Abuf block factor=64 dim=2     | src/mmult.cpp:34 in mmult, Abuf       |
+| array_partition | variable=Bbuf block factor=64 dim=1     | src/mmult.cpp:35 in mmult, Bbuf       |
+| array_reshape   | variable=result_buf type=complete dim=1 | src/mmult.cpp:37 in mmult, result_buf |
+| pipeline        |                                         | src/mmult.cpp:43 in mmult             |
+| pipeline        |                                         | src/mmult.cpp:53 in mmult             |
++-----------------+-----------------------------------------+---------------------------------------+
+
+

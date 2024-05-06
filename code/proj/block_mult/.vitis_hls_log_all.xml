@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:40.059+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARUSER' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.967+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARREGION' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.944+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARQOS' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.936+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARPROT' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.927+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARCACHE' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.909+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARLOCK' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.898+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARBURST' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.890+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARSIZE' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.876+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARLEN' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.865+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARID' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.850+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARADDR' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.840+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_B_ARVALID' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.827+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARUSER' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.816+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARREGION' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.807+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARQOS' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.798+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARPROT' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.786+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARCACHE' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.776+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARLOCK' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.765+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARBURST' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.756+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARSIZE' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.743+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARLEN' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.732+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARID' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.723+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARADDR' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.712+0200" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C/m_axi_A_ARVALID' to 0." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:37.705+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'mmult_Pipeline_MEM_LOOP_R_MEM_LOOP_C' consists of the following:&#xA;&#x9;'store' operation 0 bit ('j_write_ln42', src/mmult.cpp:42) of constant 0 on local variable 'j', src/mmult.cpp:42 [144]  (1.588 ns)&#xA;&#x9;'load' operation 8 bit ('j_load', src/mmult.cpp:42) on local variable 'j', src/mmult.cpp:42 [154]  (0.000 ns)&#xA;&#x9;'icmp' operation 1 bit ('icmp_ln42', src/mmult.cpp:42) [161]  (1.915 ns)&#xA;&#x9;'select' operation 8 bit ('select_ln41', src/mmult.cpp:41) [162]  (1.248 ns)&#xA;&#x9;'add' operation 8 bit ('add_ln42', src/mmult.cpp:42) [694]  (1.915 ns)&#xA;&#x9;'store' operation 0 bit ('j_write_ln42', src/mmult.cpp:42) of variable 'add_ln42', src/mmult.cpp:42 on local variable 'j', src/mmult.cpp:42 [697]  (1.588 ns)&#xA;&#xA;&#xA;Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-1016.html" projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:35.426+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (8.254 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).&#xA;Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-871.html" projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:35.419+0200" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] src/mmult.cpp:58: variable-indexed range selection may cause suboptimal QoR." projectName="block_mult" solutionName="sol_blk_mult" date="2024-05-06T20:55:34.615+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
