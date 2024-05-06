@@ -2584,11 +2584,11 @@ using std::wcstombs;
 using std::wctomb;
 # 4 "src/mmult.cpp" 2
 # 1 "src/mmult.h" 1
-# 12 "src/mmult.h"
-__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[128*128], float B[128*128], float C[128*128]);
+# 16 "src/mmult.h"
+__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[1024*1024], float B[1024*1024], float C[1024*1024]);
 # 5 "src/mmult.cpp" 2
 # 15 "src/mmult.cpp"
-__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[128 * 128], float B[128 * 128], float C[128 * 128]) {
+__attribute__((sdx_kernel("mmult", 0))) void mmult (float A[1024 * 1024], float B[1024 * 1024], float C[1024 * 1024]) {
 #line 18 "/home/arvba41/courses/advanced_fpga_impl/code/proj/block_mult/sol_blk_mult/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=mmult
 # 15 "src/mmult.cpp"
@@ -2603,40 +2603,55 @@ __attribute__((sdx_kernel("mmult", 0))) void mmult (float A[128 * 128], float B[
 #pragma HLS INTERFACE m_axi port=C offset=slave bundle=C
 #pragma HLS INTERFACE s_axilite port=return
 
- float Abuf[128][128], Bbuf[128][128], result_buf[128 / 32];
+ float Abuf[64][1024], Bbuf[1024][64], result_buf[1024 / 32];
 
-#pragma HLS ARRAY_PARTITION variable=Abuf block factor=64 dim=2
-#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=64 dim=1
+#pragma HLS ARRAY_RESHAPE variable=Abuf block factor=(1024 / 16) dim=2
+#pragma HLS ARRAY_RESHAPE variable=Bbuf block factor=(1024 / 16) dim=1
 
 #pragma HLS ARRAY_RESHAPE variable=result_buf type=complete dim=1
 
 
 
- MEM_LOOP_R : for(int i=0; i < 128; i++) {
-  MEM_LOOP_C : for(int j=0; j < 128; j++) {
+ BLOCK_ROW : for (int ib = 0; ib < 1024 / 64; ib++) {
+  BLOCK_COL : for (int jb = 0; jb < 1024 / 64; jb++) {
+#pragma HLS DATAFLOW
+
+
+ MEMA_BLOCKR : for(int i=0; i < 64; i++) {
+    MEMB_BLOCKC : for(int j=0; j < 64; j++) {
+
+     MEM_N : for(int k=0; k < 1024; k++) {
 #pragma HLS PIPELINE
- Abuf[i][j] = A[i * 128 + j];
-   Bbuf[i][j] = B[i * 128 + j];
+ if (j == 0) {
+       Abuf[i][k] = A[(ib * 64 + i) * 1024 + k];
+      }
+      Bbuf[k][j] = B[k * 1024 + (jb * 64 + j)];
+     }
+    }
+   }
+
+
+
+   MUL_ROW : for (int i = 0; i < 64; i++) {
+    MUL_COL : for (int j = 0; j < 64; j++) {
+     float result = 0;
+     BREAK : for (int kmul = 0; kmul < (1024 / 32); kmul++) {
+#pragma HLS PIPELINE
+ result_buf[kmul] = 0;
+      PRODUCT : for (int k = 0; k < 32; k++) {
+
+       float term = Abuf[i][kmul * 32 + k] * Bbuf[kmul * 32 + k][j];
+       result_buf[kmul] += term;
+      }
+     }
+
+
+#pragma HLS dependence variable=result type=inter true
+ RESULT : for (int kmul = 0; kmul < (1024 / 32); kmul++)
+      result += result_buf[kmul];
+     C[(ib * 64 + i) * 1024 + (jb * 64 + j)] = result;
+    }
+   }
   }
  }
-
- MUL_ROW : for (int i = 0; i < 128; i++) {
-  MUL_COL : for (int j = 0; j < 128; j++) {
-   float result = 0;
-   BREAK : for (int kb = 0; kb < (128 / 32); kb++) {
-#pragma HLS PIPELINE
- result_buf[kb] = 0;
-    PRODUCT : for (int k = 0; k < 32; k++) {
-
-     float term = Abuf[i][kb * 32 + k] * Bbuf[kb * 32 + k][j];
-     result_buf[kb] += term;
-    }
-   }
-
-   RESULT : for (int kb = 0; kb < (128 / 32); kb++) {
-    result += result_buf[kb];
-   }
-   C[i * 128 + j] = result;
-  }
-    }
 }

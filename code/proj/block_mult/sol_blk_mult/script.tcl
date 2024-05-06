@@ -12,10 +12,10 @@ open_solution "sol_blk_mult" -flow_target vivado
 set_part {xc7z020i-clg400-1L}
 create_clock -period 10 -name default
 config_compile -pipeline_loops 0
-config_cosim -tool xsim
+config_cosim -rtl vhdl -tool xsim
 config_export -format ip_catalog -rtl verilog -vivado_clock 10
 source "./block_mult/sol_blk_mult/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -rtl vhdl
 export_design -rtl verilog -format ip_catalog

@@ -29,42 +29,57 @@ void mmult (float A[N * N], float B[N * N], float C[N * N]) {
 	#pragma HLS INTERFACE m_axi port=C offset=slave bundle=C
 	#pragma HLS INTERFACE s_axilite port=return
 
-	float Abuf[N][N], Bbuf[N][N], result_buf[N / M];
+	float Abuf[BLOCK_SIZE][N], Bbuf[N][BLOCK_SIZE], result_buf[N / MUL_SIZE];
 
-	#pragma HLS ARRAY_PARTITION variable=Abuf block factor=BLOCK_FACTOR dim=2
-	#pragma HLS ARRAY_PARTITION variable=Bbuf block factor=BLOCK_FACTOR dim=1
+	#pragma HLS ARRAY_RESHAPE variable=Abuf block factor=BLOCK_FACTOR dim=2
+	#pragma HLS ARRAY_RESHAPE variable=Bbuf block factor=BLOCK_FACTOR dim=1
 
 	#pragma HLS ARRAY_RESHAPE variable=result_buf type=complete dim=1
 
 	// #pragma HLS DATAFLOW // used to enable the dataflow optimization between the loops 
 
-	MEM_LOOP_R : for(int i=0; i < N; i++) {
-		MEM_LOOP_C : for(int j=0; j < N; j++) {
-			#pragma HLS PIPELINE
-			Abuf[i][j] = A[i * N + j];
-			Bbuf[i][j] = B[i * N + j];
-		}
-	}
+	BLOCK_ROW : for (int ib = 0; ib < N / BLOCK_SIZE; ib++) { // loop over the block rows
+		BLOCK_COL : for (int jb = 0; jb < N / BLOCK_SIZE; jb++) { // loop over the block columns
+			// #pragma HLS DATAFLOW // used to enable the dataflow optimization between within the loop BLOCK_COL
 
-	MUL_ROW : for (int i = 0; i < N; i++) {
-		MUL_COL : for (int j = 0; j < N; j++) {
-			float result = 0;
-			BREAK : for (int kb = 0; kb < (N / M); kb++) {
-				#pragma HLS PIPELINE	
-				result_buf[kb] = 0;
-				PRODUCT : for (int k = 0; k < M; k++) {
-					// # pragma HLS UNROLL factor=32
-					float term = Abuf[i][kb * M + k] * Bbuf[kb * M + k][j];
-					result_buf[kb] += term;
+			// load the block matrices into the local RAMs
+			MEMA_BLOCKR : for(int i=0; i < BLOCK_SIZE; i++) { // loop over the block rows
+				MEMB_BLOCKC : for(int j=0; j < BLOCK_SIZE; j++) { // loop over the block columns
+					
+					MEM_N : for(int k=0; k < N; k++) {
+						#pragma HLS PIPELINE
+						if (j == 0) { // only load the A block when necessary
+							Abuf[i][k] = A[(ib * BLOCK_SIZE+ i) * N + k];
+						}
+						Bbuf[k][j] = B[k * N + (jb * BLOCK_SIZE + j)];
+					}
 				}
 			}
-			
-			RESULT : for (int kb = 0; kb < (N / M); kb++) {
-				result += result_buf[kb];
+
+			// perform the matrix multiplication
+
+			MUL_ROW : for (int i = 0; i < BLOCK_SIZE; i++) {
+				MUL_COL : for (int j = 0; j < BLOCK_SIZE; j++) {
+					float result = 0;
+					BREAK : for (int kmul = 0; kmul < (N / MUL_SIZE); kmul++) {
+						#pragma HLS PIPELINE	
+						result_buf[kmul] = 0;
+						PRODUCT : for (int k = 0; k < MUL_SIZE; k++) {
+							// # pragma HLS UNROLL factor=32
+							float term = Abuf[i][kmul * MUL_SIZE + k] * Bbuf[kmul * MUL_SIZE + k][j];
+							result_buf[kmul] += term;
+						}
+					}
+
+					// Extract the result from the result bufferMUL_SIZE
+					#pragma HLS dependence variable=result type=inter true 
+					RESULT : for (int kmul = 0; kmul < (N / MUL_SIZE); kmul++) 
+						result += result_buf[kmul];
+					C[(ib * BLOCK_SIZE+ i) * N + (jb * BLOCK_SIZE+ j)] = result;
+				}
 			}
-			C[i * N + j] = result;
 		}
-    }
+	}
 }
 
 // XSIP watermark, do not delete 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689

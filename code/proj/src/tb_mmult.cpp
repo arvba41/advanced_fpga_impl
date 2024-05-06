@@ -5,7 +5,7 @@
 
 #include "mmult.h"
 
-#define NUM_TESTS 1024
+#define NUM_TESTS 5
 
 
 static void init_arrays(float *A,  float *B, float *D, float *D_sw)

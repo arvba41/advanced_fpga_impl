@@ -1,10 +1,10 @@
 {
   "0": {
-    "basicblocks": 18,
+    "basicblocks": 27,
     "calls": "",
     "file": "mmult.cpp",
     "fileloc": 15,
-    "instructions": 404,
+    "instructions": 435,
     "loads": {
       "L": 66,
       "T": 2
@@ -14,6 +14,6 @@
       "L": 4,
       "T": 1
     },
-    "total_instructions": 404
+    "total_instructions": 435
   }
 }

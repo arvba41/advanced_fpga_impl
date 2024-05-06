@@ -4,20 +4,20 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: noinline
-define void @apatb_mmult_ir(float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="16384" "maxi" %A, float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="16384" "maxi" %B, float* noalias nocapture nonnull "fpga.decayed.dim.hint"="16384" "maxi" %C) local_unnamed_addr #0 {
+define void @apatb_mmult_ir(float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="1048576" "maxi" %A, float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="1048576" "maxi" %B, float* noalias nocapture nonnull "fpga.decayed.dim.hint"="1048576" "maxi" %C) local_unnamed_addr #0 {
 entry:
-  %malloccall = tail call i8* @malloc(i64 65536)
-  %A_copy = bitcast i8* %malloccall to [16384 x float]*
-  %malloccall1 = tail call i8* @malloc(i64 65536)
-  %B_copy = bitcast i8* %malloccall1 to [16384 x float]*
-  %malloccall2 = tail call i8* @malloc(i64 65536)
-  %C_copy = bitcast i8* %malloccall2 to [16384 x float]*
-  %0 = bitcast float* %A to [16384 x float]*
-  %1 = bitcast float* %B to [16384 x float]*
-  %2 = bitcast float* %C to [16384 x float]*
-  call fastcc void @copy_in([16384 x float]* nonnull %0, [16384 x float]* %A_copy, [16384 x float]* nonnull %1, [16384 x float]* %B_copy, [16384 x float]* nonnull %2, [16384 x float]* %C_copy)
-  call void @apatb_mmult_hw([16384 x float]* %A_copy, [16384 x float]* %B_copy, [16384 x float]* %C_copy)
-  call void @copy_back([16384 x float]* %0, [16384 x float]* %A_copy, [16384 x float]* %1, [16384 x float]* %B_copy, [16384 x float]* %2, [16384 x float]* %C_copy)
+  %malloccall = tail call i8* @malloc(i64 4194304)
+  %A_copy = bitcast i8* %malloccall to [1048576 x float]*
+  %malloccall1 = tail call i8* @malloc(i64 4194304)
+  %B_copy = bitcast i8* %malloccall1 to [1048576 x float]*
+  %malloccall2 = tail call i8* @malloc(i64 4194304)
+  %C_copy = bitcast i8* %malloccall2 to [1048576 x float]*
+  %0 = bitcast float* %A to [1048576 x float]*
+  %1 = bitcast float* %B to [1048576 x float]*
+  %2 = bitcast float* %C to [1048576 x float]*
+  call fastcc void @copy_in([1048576 x float]* nonnull %0, [1048576 x float]* %A_copy, [1048576 x float]* nonnull %1, [1048576 x float]* %B_copy, [1048576 x float]* nonnull %2, [1048576 x float]* %C_copy)
+  call void @apatb_mmult_hw([1048576 x float]* %A_copy, [1048576 x float]* %B_copy, [1048576 x float]* %C_copy)
+  call void @copy_back([1048576 x float]* %0, [1048576 x float]* %A_copy, [1048576 x float]* %1, [1048576 x float]* %B_copy, [1048576 x float]* %2, [1048576 x float]* %C_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   tail call void @free(i8* %malloccall2)
@@ -27,24 +27,24 @@ entry:
 declare noalias i8* @malloc(i64) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias) unnamed_addr #1 {
+define internal fastcc void @copy_in([1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias) unnamed_addr #1 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %1, [16384 x float]* %0)
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %3, [16384 x float]* %2)
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %5, [16384 x float]* %4)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %1, [1048576 x float]* %0)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %3, [1048576 x float]* %2)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %5, [1048576 x float]* %4)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* noalias %dst, [16384 x float]* noalias readonly %src) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* noalias %dst, [1048576 x float]* noalias readonly %src) unnamed_addr #2 {
 entry:
-  %0 = icmp eq [16384 x float]* %dst, null
-  %1 = icmp eq [16384 x float]* %src, null
+  %0 = icmp eq [1048576 x float]* %dst, null
+  %1 = icmp eq [1048576 x float]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @arraycpy_hls.p0a16384f32([16384 x float]* nonnull %dst, [16384 x float]* nonnull %src, i64 16384)
+  call void @arraycpy_hls.p0a1048576f32([1048576 x float]* nonnull %dst, [1048576 x float]* nonnull %src, i64 1048576)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -52,10 +52,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a16384f32([16384 x float]* %dst, [16384 x float]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @arraycpy_hls.p0a1048576f32([1048576 x float]* %dst, [1048576 x float]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [16384 x float]* %src, null
-  %1 = icmp eq [16384 x float]* %dst, null
+  %0 = icmp eq [1048576 x float]* %src, null
+  %1 = icmp eq [1048576 x float]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -68,8 +68,8 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [16384 x float], [16384 x float]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [16384 x float], [16384 x float]* %src, i64 0, i64 %for.loop.idx2
+  %dst.addr = getelementptr [1048576 x float], [1048576 x float]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [1048576 x float], [1048576 x float]* %src, i64 0, i64 %for.loop.idx2
   %3 = load float, float* %src.addr, align 4
   store float %3, float* %dst.addr, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
@@ -84,33 +84,33 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_out([1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %0, [16384 x float]* %1)
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %2, [16384 x float]* %3)
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %4, [16384 x float]* %5)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %0, [1048576 x float]* %1)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %2, [1048576 x float]* %3)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %4, [1048576 x float]* %5)
   ret void
 }
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_mmult_hw([16384 x float]*, [16384 x float]*, [16384 x float]*)
+declare void @apatb_mmult_hw([1048576 x float]*, [1048576 x float]*, [1048576 x float]*)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly, [16384 x float]* noalias, [16384 x float]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_back([1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly, [1048576 x float]* noalias, [1048576 x float]* noalias readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a16384f32([16384 x float]* %4, [16384 x float]* %5)
+  call fastcc void @onebyonecpy_hls.p0a1048576f32([1048576 x float]* %4, [1048576 x float]* %5)
   ret void
 }
 
-define void @mmult_hw_stub_wrapper([16384 x float]*, [16384 x float]*, [16384 x float]*) #5 {
+define void @mmult_hw_stub_wrapper([1048576 x float]*, [1048576 x float]*, [1048576 x float]*) #5 {
 entry:
-  call void @copy_out([16384 x float]* null, [16384 x float]* %0, [16384 x float]* null, [16384 x float]* %1, [16384 x float]* null, [16384 x float]* %2)
-  %3 = bitcast [16384 x float]* %0 to float*
-  %4 = bitcast [16384 x float]* %1 to float*
-  %5 = bitcast [16384 x float]* %2 to float*
+  call void @copy_out([1048576 x float]* null, [1048576 x float]* %0, [1048576 x float]* null, [1048576 x float]* %1, [1048576 x float]* null, [1048576 x float]* %2)
+  %3 = bitcast [1048576 x float]* %0 to float*
+  %4 = bitcast [1048576 x float]* %1 to float*
+  %5 = bitcast [1048576 x float]* %2 to float*
   call void @mmult_hw_stub(float* %3, float* %4, float* %5)
-  call void @copy_in([16384 x float]* null, [16384 x float]* %0, [16384 x float]* null, [16384 x float]* %1, [16384 x float]* null, [16384 x float]* %2)
+  call void @copy_in([1048576 x float]* null, [1048576 x float]* %0, [1048576 x float]* null, [1048576 x float]* %1, [1048576 x float]* null, [1048576 x float]* %2)
   ret void
 }
 

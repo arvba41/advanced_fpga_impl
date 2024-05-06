@@ -5,6 +5,11 @@
                 <option name="name" value="mmult"/>
             </pragma>
         </directive>
+        <directive functionName="mmult" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="mmult"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

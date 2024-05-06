@@ -1,11 +1,13 @@
 <pragmas>
-<pragma file="src/mmult.cpp" line="53" pragmaType="pipeline" parentfunction="mmult" off="0" ii="-1" rewind="0" style=""/>
-<pragma file="src/mmult.cpp" line="43" pragmaType="pipeline" parentfunction="mmult" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/mmult.cpp" line="43" pragmaType="dataflow" parentfunction="mmult" disable_start_propagation="0"/>
+<pragma file="src/mmult.cpp" line="50" pragmaType="pipeline" parentfunction="mmult" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/mmult.cpp" line="65" pragmaType="pipeline" parentfunction="mmult" off="0" ii="-1" rewind="0" style=""/>
 <pragma file="src/mmult.cpp" line="27" pragmaType="interface" parentfunction="mmult" mode="m_axi" port="A" bundle="A" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
 <pragma file="src/mmult.cpp" line="28" pragmaType="interface" parentfunction="mmult" mode="m_axi" port="B" bundle="B" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
 <pragma file="src/mmult.cpp" line="29" pragmaType="interface" parentfunction="mmult" mode="m_axi" port="C" bundle="C" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
 <pragma file="src/mmult.cpp" line="30" pragmaType="interface" parentfunction="mmult" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
-<pragma file="src/mmult.cpp" line="34" pragmaType="array_partition" parentfunction="mmult" dim="2" factor="64" mode="block" dynamic="0" variable="Abuf"/>
-<pragma file="src/mmult.cpp" line="35" pragmaType="array_partition" parentfunction="mmult" dim="1" factor="64" mode="block" dynamic="0" variable="Bbuf"/>
+<pragma file="src/mmult.cpp" line="34" pragmaType="array_reshape" parentfunction="mmult" dim="2" factor="64" mode="block" variable="Abuf"/>
+<pragma file="src/mmult.cpp" line="35" pragmaType="array_reshape" parentfunction="mmult" dim="1" factor="64" mode="block" variable="Bbuf"/>
 <pragma file="src/mmult.cpp" line="37" pragmaType="array_reshape" parentfunction="mmult" dim="1" factor="0" mode="complete" variable="result_buf"/>
+<pragma file="src/mmult.cpp" line="75" pragmaType="dependence" parentfunction="mmult" class="" direction="NODIR" type="inter" distance="0" variable="result"/>
 </pragmas>
